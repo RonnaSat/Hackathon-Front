@@ -221,7 +221,20 @@ body {
   border: 1px solid #57536C;
 }
 .im-photo1{
-  width: 15rem;
-  height: 15rem;
+  width: 100%;
+  height: 100%;
+}
+.input-group-text {
+  background-color: #D8CCE2 !important;
+}
+.form-label{
+  color: #57536C !important;
+}
+.form-check-label{
+  color: #57536C;
+}
+.form-check-input:checked{
+  background-color: #57536C !important;
+  border-color: #57536C !important;
 }
 

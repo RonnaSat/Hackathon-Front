@@ -58,10 +58,8 @@ export default function Receipt() {
                                             Now - 10 December
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     <div className='pt-3 d-flex justify-content-end'>
