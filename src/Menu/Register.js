@@ -1,10 +1,8 @@
 import React from 'react';
-import Navbar from '../Component/Navbar';
 
 export default function Register() {
     return (
         <>
-        <Navbar/>
             <div className="container">
                 <div className="row">
                     <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -20,22 +18,42 @@ export default function Register() {
 
                         <div className="card border-0 shadow-sm rounded-3 my-5 ">
 
-                            <div className="card-body2 p-4 p-sm-5 rounded">
+                            <div className="card-body2 p-4 p-sm-5 rounded-3">
                                 <div>
-                                    <h5 className="card-title text-center mb-4 fw-light fs-5 text-uppercase fw-bold">Sign In</h5>
+                                    <h5 className="card-title text-center mb-4 fw-light fs-5 text-uppercase fw-bold">Register</h5>
                                     <form>
-                                        <p className='fw-bold'>Please sing in to your account</p>
+                                        <div className=''>
+
+                                        </div>
+                                        <p className='fw-bold'>Please register your account</p>
+                                        <div class="row">
+                                            <div class="col">
+                                            <div className="form-floating mb-3">
+                                            <input type="text" className="form-control" id="floatingInput" placeholder="Name"/>
+                                            <label htmlFor="floatingInput">Name</label>
+                                        </div>
+                                            </div>
+                                            <div class="col">
+                                            <div className="form-floating mb-3">
+                                            <input type="text " className="form-control" id="floatingInput" placeholder="Surname"/>
+                                            <label htmlFor="floatingInput">Surname</label>
+                                        </div>
+                                            </div>
+                                        </div>
                                         <div className="form-floating mb-3">
-                                            <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" />
+                                            <input type="email" className="form-control" id="floatingInput" placeholder="Email address"/>
                                             <label htmlFor="floatingInput">Email address</label>
                                         </div>
                                         <div className="form-floating mb-3">
                                             <input type="password" className="form-control" id="floatingPassword" placeholder="Password" />
                                             <label htmlFor="floatingPassword">Password</label>
                                         </div>
-
+                                        <div className="form-floating mb-3">
+                                            <input type="password" className="form-control" id="floatingPassword" placeholder="Password" />
+                                            <label htmlFor="floatingPassword">Repeat password</label>
+                                        </div>
                                         <div className="d-grid">
-                                            <button className="btn-color btn-login text-uppercase fw-bold rounded border shadow-sm" type="submit">Sign in</button>
+                                            <button className="btn-color btn-login text-uppercase fw-bold rounded border shadow-sm" type="submit">Register</button>
                                         </div>
 
                                     </form>

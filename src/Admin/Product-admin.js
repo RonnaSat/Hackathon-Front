@@ -1,42 +1,14 @@
 import React from 'react';
-import Footer from '../Component/Footer';
-import Navbar from '../Component/Navbar';
 
-export default function Home() {
+export default function Product_admin() {
     return (
         <>
-            <div className='bg-color'>
-                <Navbar />
-                <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="true">
-                    <div className="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={0} className="active" aria-current="true" aria-label="Slide 1" />
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={1} aria-label="Slide 2" />
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={2} aria-label="Slide 3" />
-                    </div>
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
-                            <img src="./img/516021.jpg" className="d-block w-100 h-25rem" alt="..." />
-                        </div>
-                        <div className="carousel-item">
-                            <img src="./img/516021.jpg" className="d-block w-100 h-25rem" alt="./img/516021.jpg" />
-                        </div>
-                        <div className="carousel-item">
-                            <img src="./img/516021.jpg" className="d-block w-100 h-25rem" alt="..." />
-                        </div>
-                    </div>
-                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                        <span className="carousel-control-prev-icon" aria-hidden="true" />
-                        <span className="visually-hidden">Previous</span>
-                    </button>
-                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true" />
-                        <span className="visually-hidden">Next</span>
-                    </button>
-                </div>
-                <div>
-                    <p class="text-center fw-bold card-body3 p-5 fs-4 p-sm-5 rounded">PERFUME</p>
+            <div >
+                <div className='img my-5 d-flex justify-content-center'>
+                    <img src='img/logo.png'></img>
                 </div>
                 <div className='col-12 d-flex justify-content-center'>
+
                     <div className='p-4 p-sm-5'>
                         <div className="card mb-3" style={{ maxWidth: 540 }}>
                             <div className="row g-0">
@@ -53,7 +25,7 @@ export default function Home() {
                                         <p className="card-text">Brand Product</p>
                                         <hr></hr>
                                         <div className='d-flex justify-content-md-center'>
-                                            <button class="btn-or btn badge text-uppercase fs-6" type="button">get free</button>
+                                            <button class="btn btn-outline-secondary btn badge text-uppercase fs-6" type="button" disabled>get free</button>
                                         </div>
                                     </div>
                                 </div>
@@ -63,7 +35,7 @@ export default function Home() {
                     <div className='p-4 p-sm-5'>
                         <div className="card mb-3" style={{ maxWidth: 540 }}>
                             <div className="row g-0">
-                            <div className="col-md-4 btn-pp align-items-center d-flex">
+                                <div className="col-md-4 btn-pp align-items-center d-flex">
                                     <div class="d-flex ">
                                         <img src='./img/112.png' className="img-fluid rounded-start" alt="..." />
                                     </div>
@@ -75,7 +47,7 @@ export default function Home() {
                                         <hr></hr>
                                         <p className="card-text">Brand Product</p><hr></hr>
                                         <div className='d-flex justify-content-md-center'>
-                                            <button class="btn-or btn badge text-uppercase fs-6" type="button">get free</button>
+                                            <button class="btn btn-outline-secondary btn badge text-uppercase fs-6" type="button" disabled>get free</button>
                                         </div>
                                     </div>
                                 </div>
@@ -83,11 +55,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <Footer />
             </div>
-
-
         </>
-
     );
 }
