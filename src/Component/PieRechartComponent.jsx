@@ -1,26 +1,27 @@
 import React from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
+
 class PieRechartComponent extends React.Component {
-   COLORS = ["#8884d8", "#82ca9d", "#FFBB28", "#FF8042", "#AF19FF"];
+   COLORS = ["#F7A691", "#F79E36", "#D8CCE2", "#D1E5E6", "#D0D6B0"];
    pieData = [
       {
-         name: "Apple",
+         name: "Very Unsatisfied",
          value: 54.85
       },
       {
-         name: "Samsung",
+         name: "Unsatisfied",
          value: 47.91
       },
       {
-         name: "Redmi",
+         name: "Neutral",
          value: 16.85
       },
       {
-         name: "One Plus",
+         name: "Satisfied",
          value: 16.14
       },
       {
-         name: "Others",
+         name: "Very Satisfied",
          value: 10.25
       }
    ];
@@ -28,13 +29,15 @@ class PieRechartComponent extends React.Component {
       if (active) {
          return (
          <div
+         
             className="custom-tooltip"
             style={{
                backgroundColor: "#ffff",
-               padding: "5px",
-               border: "1px solid #cccc"
+               padding: "10px",
+               border: "5px solid #cccc"
             }}
          >
+            
             <label>{`${payload[0].name} : ${payload[0].value}%`}</label>
          </div>
       );
@@ -43,7 +46,8 @@ class PieRechartComponent extends React.Component {
 };
 render() {
    return (
-      <PieChart width={730} height={300}>
+      
+      <PieChart width={430} height={300}>
       <Pie
          data={this.pieData}
          color="#000000"
@@ -51,7 +55,7 @@ render() {
          nameKey="name"
          cx="50%"
          cy="50%"
-         outerRadius={120}
+         outerRadius={100}
          fill="#8884d8"
       >
          {this.pieData.map((entry, index) => (

@@ -16,7 +16,7 @@ export default function Review_product() {
                         <div class="row ">
                             <div class="col-12 col-md-4">
                                 <div class="im-photo1 rounded-2 bg-white d-flex justify-content-center align-items-center p-3">
-                                    <img src='./img/112.png' className="img-fluid rounded-start w-75" />
+                                    <img src='./img/1.png' className="img-fluid rounded-start w-75" />
                                 </div>
                             </div>
                             <div class="col-12 col-md-8 py-4">
@@ -78,10 +78,9 @@ export default function Review_product() {
                                 <textarea class="form-control h-100" placeholder="Leave a comment here" id="floatingTextarea2"></textarea>
                                 <label for="floatingTextarea2">Comment about product</label>
                             </div>
-                            <div className='d-flex justify-content-center pt-3'>
-                                <input className="btn btn-purple fw-bold btn-lg" type="submit" defaultValue="Submit" />
-                            </div>
-                            
+                            <div className='d-flex justify-content-center pt-3 '>
+                                <input className="btn btn-purple fw-bold btn-lg d-grid gap-2 col-6 mx-auto" type="submit" defaultValue="Submit" />
+                            </div>    
 
                         </div>
                     </div>
