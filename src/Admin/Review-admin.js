@@ -10,10 +10,10 @@ export default function Review_admin() {
             <div className='d-flex justify-content-center'>
                 <div class="p-3 col-sm-7 ">
 
-                    <div class="pb-4 pt-4 border bg-pp rounded-2 px-5">
+                    <div class="pb-4 pt-4 border bg-pp rounded-3 px-5">
                         <div class="row ">
                             <div class="col-12 col-md-4">
-                                <div class="im-photo1 rounded-2 bg-white d-flex justify-content-center align-items-center p-3">
+                                <div class="im-photo1 rounded-3 bg-white d-flex justify-content-center align-items-center p-3">
                                     <img src='./img/3.png' className="img-fluid rounded-start w-75" />
                                 </div>
                             </div>
@@ -76,6 +76,10 @@ export default function Review_admin() {
                                             <h5 className="card-title py-2">User name</h5>
                                             <p>Use the scaling classes for larger or smaller rounded corners. Sizes range from 0 to 3, and can be configured by modifying the utilities API.</p>
                                         </div>
+                                    </div>
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end py-4">
+                                        <button class="btn btn-purple2 fs-5" type="button">Download review data</button>
+                                        
                                     </div>
 
                                 </div>

@@ -78,7 +78,7 @@ export default function Review_product() {
                                 <textarea class="form-control h-100" placeholder="Leave a comment here" id="floatingTextarea2"></textarea>
                                 <label for="floatingTextarea2">Comment about product</label>
                             </div>
-                            <div className='d-flex justify-content-center pt-3 '>
+                            <div className='d-flex justify-content-center py-4 '>
                                 <input className="btn btn-purple fw-bold btn-lg d-grid gap-2 col-6 mx-auto" type="submit" defaultValue="Submit" />
                             </div>    
 
