@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Footer from '../Component/Footer';
 import Navbar from '../Component/Navbar';
+import axios from 'axios';
 
 export default function Home() {
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        async function getProducts() {
+            const products = await axios.get(
+                `http://localhost:8000/product/getAll`
+            );
+            setProducts(products.data);
+        }
+        getProducts();
+    }, []);
+    console.log(products);
     return (
         <>
             <div className='bg-color'>
@@ -63,7 +75,7 @@ export default function Home() {
                     <div className='p-4 p-sm-5'>
                         <div className="card mb-3" style={{ maxWidth: 540 }}>
                             <div className="row g-0">
-                            <div className="col-md-4 btn-pp align-items-center d-flex">
+                                <div className="col-md-4 btn-pp align-items-center d-flex">
                                     <div class="d-flex ">
                                         <img src='./img/112.png' className="img-fluid rounded-start" alt="..." />
                                     </div>
