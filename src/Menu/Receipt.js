@@ -7,7 +7,7 @@ export default function Receipt() {
         <>
             <Navbar />
             <div className='d-flex justify-content-center'>
-                <div class="p-3 col-sm-8 ">
+                <div class="p-3 col-sm-7 ">
                     <div class="pb-4 pt-4 border bg-pp rounded-2 ">
                         <div className='d-flex justify-content-center'>
                             <h4 className="card-title pb-4 fw-bold">GOODS RECEIPT</h4>
@@ -65,8 +65,8 @@ export default function Receipt() {
                     <div className='pt-3 d-flex justify-content-end'>
                         <button class="btn btn-green m-3 fw-bold" type="submit">CONFIRM</button>
                         <button class="btn btn-or m-3 fw-bold" type="submit">CANCEL</button>
-
                     </div>
+                    
                 </div>
 
             </div>

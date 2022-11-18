@@ -238,3 +238,11 @@ body {
   border-color: #57536C !important;
 }
 
+.btn-purple {
+  background-color: #D8CCE2 !important;
+  color: #57536C !important;
+  border: #57536C !important;
+}
+.btn-purple :hover{
+  background-color: #D0D6B0 !important;
+}

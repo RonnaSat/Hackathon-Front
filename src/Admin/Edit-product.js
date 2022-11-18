@@ -56,7 +56,7 @@ export default function Edit_product() {
                                 <div class="container">
                                     <div class="row">
                                         <div class="col bg-light rounded-3 col-2">
-                                            <div class="d-flex ">
+                                            <div class="d-flex col-12">
                                                 <img src='./img/113.png' className="img-fluid rounded-start" alt="..." />
                                             </div>
                                         </div>

@@ -40,7 +40,7 @@ export default function Review_product() {
                     </div>
                     <div className='row'>
                         <div classname="d-flex justify-content-start col-6">
-                            <h4 class="card-body3 fw-bold pt-5 pb-2">Your information</h4>
+                            <h4 class="card-body3 fw-bold pt-5 pb-3">Your information</h4>
                             <form className="row g-3 needs-validation" noValidate>
                                 <div className="col-md-4">
                                     <label htmlFor="validationCustom01" className="form-label">First name</label>
@@ -58,7 +58,7 @@ export default function Review_product() {
                                         <option>Female</option>
                                     </select>
                                 </div>
-                                <div className="col-12">
+                                <div className="col-12 pb-3">
                                     <div className="form-check">
                                         <input className="form-check-input" type="checkbox" defaultValue id="invalidCheck" required />
                                         <label className="form-check-label" htmlFor="invalidCheck">
@@ -68,15 +68,21 @@ export default function Review_product() {
                                 </div>
                             </form>
                             <hr></hr>
-                            <h4 class="card-body3 fw-bold pb-2">Review</h4>
+                            <h4 class="card-body3 fw-bold pb-3">Review</h4>
                             <Rating title={'Fragrance'} />
                             <Rating title={'Longevity'} />
                             <Rating title={'Concentration'} />
                             <Rating title={'Price'} />
-                            <p className="card-title py-2 fw-bold pt-4">Comment</p>
-                            <div className="col-md-12 input-group input-group-lg pb-5">
-                                <input type="text" className="form-control" id="validationCustom01" required />
+                            <p className="card-title py-2 fw-bold pt-4 pb-3">Comment</p>
+                            <div class="form-floating">
+                                <textarea class="form-control h-100" placeholder="Leave a comment here" id="floatingTextarea2"></textarea>
+                                <label for="floatingTextarea2">Comment about product</label>
                             </div>
+                            <div className='d-flex justify-content-center pt-3'>
+                                <input className="btn btn-purple fw-bold btn-lg" type="submit" defaultValue="Submit" />
+                            </div>
+                            
+
                         </div>
                     </div>
                 </div>

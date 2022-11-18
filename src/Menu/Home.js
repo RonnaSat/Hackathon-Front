@@ -34,7 +34,7 @@ export default function Home() {
                     </button>
                 </div>
                 <div>
-                    <p class="text-center fw-bold card-body3 p-5 fs-4 p-sm-5 rounded">PERFUME</p>
+                    <p class="text-center fw-bold card-body3 p-5 fs-2 ps-5">PERFUME</p>
                 </div>
                 <div className='col-12 d-flex justify-content-center'>
                     <div className='p-4 p-sm-5'>
