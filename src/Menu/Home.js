@@ -65,7 +65,7 @@ export default function Home() {
                                 <div className="row g-0">
                                     <div className="col-md-4 btn-pp align-items-center d-flex">
                                         <div class="d-flex ">
-                                            <img src='./img/113.png' className="img-fluid rounded-start" alt="..." />
+                                            <img src={product.productImageBase64} className="img-fluid rounded-start" alt="..." />
                                         </div>
                                     </div>
                                     <div className="col-md-8 ">
