@@ -274,20 +274,20 @@ body {
 /* Sidebar links */
 .sidebar a {
   display: block;
-  color: black;
+  color: #57536C;
   padding: 16px;
   text-decoration: none;
 }
 
 /* Active/current link */
 .sidebar a.active {
-  background-color: #04AA6D;
+  background-color: #57536C;
   color: white;
 }
 
 /* Links on mouse-over */
 .sidebar a:hover:not(.active) {
-  background-color: #555;
+  background-color: #aaa;
   color: white;
 }
 

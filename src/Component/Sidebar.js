@@ -4,15 +4,13 @@ export default function Sidebar() {
     return (
         <>
             <div class="sidebar">
-                <a class="active" href="#home">Home</a>
-                <a href="#news">News</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">About</a>
+                <a class="active" href="#home">HOME</a>
+                <a href="#addproduct">ADD PRODUCT</a>
+                <a href="#editproduct">EDIT PRODUCT</a>
+                <a href="#review">REVIEW</a>
+                <a href="#logout">LOGOUT</a>
+                
             </div>
-
-            
-
-
         </>
     );
 

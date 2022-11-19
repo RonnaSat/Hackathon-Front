@@ -5,23 +5,23 @@ class PieRechartComponent extends React.Component {
    COLORS = ["#F7A691", "#F79E36", "#D8CCE2", "#D1E5E6", "#D0D6B0"];
    pieData = [
       {
-         name: "Very Unsatisfied",
+         name: "1",
          value: 54.85
       },
       {
-         name: "Unsatisfied",
+         name: "2",
          value: 47.91
       },
       {
-         name: "Neutral",
+         name: "3",
          value: 16.85
       },
       {
-         name: "Satisfied",
+         name: "5",
          value: 16.14
       },
       {
-         name: "Very Satisfied",
+         name: "6",
          value: 10.25
       }
    ];
@@ -29,7 +29,6 @@ class PieRechartComponent extends React.Component {
       if (active) {
          return (
          <div
-         
             className="custom-tooltip"
             style={{
                backgroundColor: "#ffff",
@@ -47,7 +46,7 @@ class PieRechartComponent extends React.Component {
 render() {
    return (
       
-      <PieChart width={430} height={300}>
+      <PieChart width={330} height={300}>
       <Pie
          data={this.pieData}
          color="#000000"
