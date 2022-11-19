@@ -1,9 +1,11 @@
 import React from 'react';
+import Sidebar from '../Component/Sidebar';
 
 export default function Product_admin() {
     return (
         <>
-            <div >
+            <div class="content">
+            <div>
                 <div className='img my-5 d-flex justify-content-center'>
                     <img src='img/logo.png'></img>
                 </div>
@@ -14,7 +16,7 @@ export default function Product_admin() {
                             <div className="row g-0">
                                 <div className="col-md-4 btn-pp align-items-center d-flex">
                                     <div class="d-flex ">
-                                        <img src='./img/113.png' className="img-fluid rounded-start" alt="..." />
+                                        <img src='./img/1.png' className="img-fluid rounded-start" alt="..." />
                                     </div>
                                 </div>
                                 <div className="col-md-8 ">
@@ -37,7 +39,7 @@ export default function Product_admin() {
                             <div className="row g-0">
                                 <div className="col-md-4 btn-pp align-items-center d-flex">
                                     <div class="d-flex ">
-                                        <img src='./img/112.png' className="img-fluid rounded-start" alt="..." />
+                                        <img src='./img/2.png' className="img-fluid rounded-start" alt="..." />
                                     </div>
                                 </div>
                                 <div className="col-md-8 ">
@@ -56,6 +58,8 @@ export default function Product_admin() {
                     </div>
                 </div>
             </div>
+            </div>
+
         </>
     );
 }

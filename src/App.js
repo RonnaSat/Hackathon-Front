@@ -14,8 +14,9 @@ import Select from './Menu/Select';
 import Review from './Menu/Review';
 
 /*admin*/
+import Sidebar from "./Component/Sidebar";
 import Signin from './Admin/Signin-admin';
-import Product_admin from './Admin/Product-admin';
+import Home_admin from './Admin/Home-admin';
 import Edit_product from './Admin/Edit-product';
 import Add_product from './Admin/Add-product';
 import Review_admin from "./Admin/Review-admin";
@@ -31,8 +32,9 @@ function App() {
       <Route path="/register" element={<Register/>}/>
       <Route path="receipt" element={<Receipt/>}/>
       <Route path="/select" element={<Select/>}/>
+      <Route path="/sidebar" element={<Sidebar/>}/>
       <Route path="/signin-admin" element={<Signin/>}/>
-      <Route path="/product_admin" element={<Product_admin/>}/>
+      <Route path="/home_admin" element={<Home_admin/>}/>
       <Route path="/edit_product" element={<Edit_product/>}/>
       <Route path="/add_product" element={<Add_product/>}/>
       <Route path="/review" element={<Review/>}/>
