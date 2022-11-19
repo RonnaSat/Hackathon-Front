@@ -11,7 +11,7 @@ export default function Navbar() {
                                 <a className="nav-link active fw-bold" aria-current="page" href="#">HOME</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link fw-bold" href="#">PRODUCT</a>
+                                <a className="nav-link fw-bold" href="#">ORDER</a>
                             </li>
                             <li className=" nav-item">
                                 <div >
@@ -19,10 +19,10 @@ export default function Navbar() {
                                 </div>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link fw-bold" href="#">ORDER</a>
+                                <a className="nav-link fw-bold" href="#">REVIEW</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link fw-bold">REVIEW</a>
+                                <a className="nav-link fw-bold">LOGOUT</a>
                             </li>
                         </ul>
                     </div>

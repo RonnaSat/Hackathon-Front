@@ -3,7 +3,7 @@ import Sidebar from '../Component/Sidebar';
 
 export default function Product_admin() {
     return (
-        <>
+        <><Sidebar/>
             <div class="content">
             <div>
                 <div className='img my-5 d-flex justify-content-center'>
