@@ -13,44 +13,32 @@ export default function Add_product() {
                         <h4 class="text-center fw-bold card-body3">ADD PRODUCT</h4>
                     </div>
                     <div className='d-flex justify-content-center col-12'>
-                        <div className='col-8 '>
-                            <div class="row m-5">
-                                <div class="im-photo col-6 rounded-4 bg-white ">
+                        <div className='col-9 '>
+                            <div class="row m-2">
+                                <div class="im-photo col-5 rounded-4 bg-white ">
                                     <div className='d-flex justify-content-center align-items-center h-100'><i class="bi bi-plus fs-2"></i></div>
                                 </div>
-                                <div class="inform col-6">
+                                <div class="inform col-7">
                                     <div>
-                                        <div class="container m-1">
+                                        <div class="container ">
                                             <div class="col m-1">
                                                 <div className="col mb-3">
-                                                    <h5 class="card-body3 fw-bold">Add name product</h5>
-                                                    <div className="input-group input-group-sm ">
-                                                        <input type="text" className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                                    <div className='d-flex justify-content-start'>
+                                                        <h5 className='card-body3 fw-bold'>Name product</h5>
                                                     </div>
+                                                    <div className="form-floating mb-3">
+                                                        <input type="text" className="form-control" id="floatingInput" placeholder="name@example.com" />
+                                                        <label htmlFor="floatingInput">Add name product</label>
+                                                    </div>
+
                                                 </div>
                                                 <div className="col mb-3">
-                                                    <h5 class="card-body3 fw-bold">Add brand product</h5>
-                                                    <div className="input-group input-group-sm ">
-                                                        <input type="text" className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                                    <div className=' d-flex justify-content-start'>
+                                                        <h5 className='card-body3 fw-bold'>Description of product</h5>
                                                     </div>
-                                                </div>
-
-                                                <div class="col mb-3">
-                                                    <h5 class="card-body3 fw-bold">Add location</h5>
-                                                    <div className="input-group input-group-sm ">
-                                                        <input type="text" className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
-                                                    </div>
-                                                </div>
-                                                <div class="col mb-3">
-                                                    <h5 class="card-body3 fw-bold">Add description</h5>
-                                                    <div className="input-group input-group-sm ">
-                                                        <input type="text" className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
-                                                    </div>
-                                                </div>
-                                                <div class="col mb-3">
-                                                    <h5 class="card-body3 fw-bold">Number of products</h5>
-                                                    <div className="input-group input-group-sm ">
-                                                        <input type="text" className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                                    <div class="form-floating">
+                                                        <textarea class="form-control h-100" placeholder="Leave a comment here" id="floatingTextarea2"></textarea>
+                                                        <label for="floatingTextarea2">Add description</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -61,6 +49,25 @@ export default function Add_product() {
                                     <div class="col">
                                         <div class="col mb-3">
                                             <div class="col mb-3 mt-3">
+                                                <div class="col mb-3">
+                                                    <div class="col mb-3">
+                                                        <h5 class="card-body3 fw-bold">Add location and number of product</h5>
+                                                    </div>
+                                                    <div className="form-floating mb-3">
+                                                        <input type="text" className="form-control" id="floatingInput" placeholder="name@example.com" />
+                                                        <label htmlFor="floatingInput">Add location</label>
+                                                    </div>
+                                                    <div className="form-floating mb-3">
+                                                        <input type="text" className="form-control" id="floatingInput" placeholder="name@example.com" />
+                                                        <label htmlFor="floatingInput">Number of products</label>
+                                                    </div>
+                                                </div>
+                                                <div class="d-grid gap-2 col-3 mx-auto">
+                                                    <button class="btn btn-green fw-bold" type="button">Add location and number</button>
+                                                </div>
+                                                <div class="im-photo col-12 rounded-4 bg-white my-4">
+                                                    <div className='d-flex justify-content-center align-items-center h-100 w-100'><i class="bi bi-plus fs-2"></i></div>
+                                                </div>
                                                 <h5 class="card-body3 fw-bold">Contact</h5>
                                                 <div className="input-group input-group-sm mb-3">
                                                     <div className='contact d-flex justify-content-start row'>
@@ -90,22 +97,15 @@ export default function Add_product() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col mb-3">
-                                            <div class="col mb-3">
-                                                <h5 class="card-body3 fw-bold">Contact</h5>
-                                                <div className="input-group input-group-sm mb-3">
-                                                    <input type="text" className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
-                                                </div>
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-purple fw-bold" type="button">Button</button>
+                <div class="d-grid gap-2 col-5 mx-auto">
+                    <button class="btn btn-purple fw-bold" type="button">ADD PRODUCT</button>
                 </div>
             </div>
         </>

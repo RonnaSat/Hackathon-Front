@@ -32,7 +32,7 @@ export default function Select() {
                                 <p className="card-text">This is a wider card with supporting text </p>
                                 <hr></hr>
                                 <div>
-                                    <p className="card-text my-2">Select Branch</p>
+                                    <p className="card-text my-2">Select information</p>
                                     <select class="form-select form-select-sm my-2 rounded-3" aria-label=".form-select-sm example">
                                         <option selected>Select Branch</option>
                                         <option value="1">One</option>
