@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-
 export default function Login() {
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
@@ -43,7 +42,7 @@ export default function Login() {
                         <div className='my-5'>
                             <div className='btn-top mb-5 d-flex justify-content-between'>
                                 <button type="button" class="btn-sky card-title btn-lg col-5 btn-login text-uppercase fw-bold border shadow-sm rounded ">Sign In</button>
-                                <button type="button" class="btn-pp card-title btn-lg col-5 btn-login text-uppercase fw-bold border shadow-sm rounded">Register</button>
+                                <button type="button" class="btn-pp card-title btn-lg col-5 btn-login text-uppercase fw-bold border shadow-sm rounded" onClick={function () { window.location.href = '/register' }}>Register</button>
                             </div>
                         </div>
 

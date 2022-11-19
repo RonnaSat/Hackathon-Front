@@ -61,7 +61,7 @@ export default function Home() {
                 <div className='col-12 d-flex justify-content-center'>
                     <div class="row row-cols-2">
                         {products?.map((product) =>
-                            <div className='p-4 p-sm-5 d-flex justify-content-center'>
+                            <div key={product._id} className='p-4 p-sm-5 d-flex justify-content-center'>
                                 <div className="card mb-3" style={{ maxWidth: 540 }}>
                                     <div className="row g-0">
                                         <div className="col-md-4 btn-pp align-items-center d-flex">
