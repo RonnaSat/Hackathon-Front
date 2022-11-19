@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export default function Home() {
     const [products, setProducts] = useState([]);
-    const [token, setToken] = useState('');
+    const token = JSON.parse(localStorage.getItem('token'));
 
     useEffect(() => {
         async function getProducts() {
@@ -15,13 +15,11 @@ export default function Home() {
             setProducts(products.data);
         }
         getProducts();
-        setToken(JSON.parse(localStorage.getItem('token')));
     }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         token ? window.location.href = '/select' : window.location.href = '/login'
-
     }
 
     return (
