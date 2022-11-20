@@ -2,7 +2,8 @@ import React from 'react';
 import Footer from '../Component/Footer';
 import Navbar from '../Component/Navbar';
 
-export default function Receipt() {
+export default function Receipt({ receipt }) {
+    console.log(receipt)
     return (
         <>
             <Navbar />
@@ -31,7 +32,7 @@ export default function Receipt() {
                                             Name user
                                         </div>
                                         <div class="user col-3 ">
-                                            Natwara   Udomdechraksa
+                                            {`${receipt.fName} ${receipt.lName}`}
                                         </div>
                                     </div>
                                     <div class="row justify-content-center">
@@ -39,7 +40,7 @@ export default function Receipt() {
                                             Name product
                                         </div>
                                         <div class="user col-3">
-                                            CHANAL
+                                            {receipt.productName}
                                         </div>
                                     </div>
                                     <div class="row justify-content-center">
@@ -47,7 +48,7 @@ export default function Receipt() {
                                             Pickup branch
                                         </div>
                                         <div class="user col-3">
-                                            Wasson Maya Chiang Mai
+                                            {receipt.productLocation}
                                         </div>
                                     </div>
                                     <div class="row justify-content-center">
@@ -55,7 +56,7 @@ export default function Receipt() {
                                             Time to pickup
                                         </div>
                                         <div class="user col-3">
-                                            Now - 10 December
+                                            {receipt.productPickTime}
                                         </div>
                                     </div>
                                 </div>
@@ -66,7 +67,7 @@ export default function Receipt() {
                         <button class="btn btn-green m-3 fw-bold" type="submit">CONFIRM</button>
                         <button class="btn btn-or m-3 fw-bold" type="submit">CANCEL</button>
                     </div>
-                    
+
                 </div>
 
             </div>

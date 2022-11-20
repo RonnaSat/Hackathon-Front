@@ -4,6 +4,11 @@ import Navbar from '../Component/Navbar';
 import Rating from '../Component/Rating';
 
 export default function Review_product() {
+    const token = JSON.parse(localStorage.getItem('token'));
+    if (!token) {
+        window.location.href = "/login";
+    }
+
     return (
         <>
             <Navbar />
@@ -80,7 +85,8 @@ export default function Review_product() {
                             </div>
                             <div className='d-flex justify-content-center py-4 '>
                                 <input className="btn btn-purple fw-bold btn-lg d-grid gap-2 col-6 mx-auto" type="submit" defaultValue="Submit" />
-                            </div>    
+                            </div>
+
                         </div>
                     </div>
                 </div>

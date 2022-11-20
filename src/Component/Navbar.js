@@ -12,7 +12,7 @@ export default function Navbar() {
                                 <Link to="/" className="nav-link fw-bold">HOME</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/select" className="nav-link fw-bold">ORDER</Link>
+                                <Link to="/order" className="nav-link fw-bold">ORDER</Link>
                             </li>
                             <li className=" nav-item">
                                 <div >
