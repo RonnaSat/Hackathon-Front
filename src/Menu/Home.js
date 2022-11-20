@@ -19,7 +19,7 @@ export default function Home() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        token ? window.location.href = '/select' : window.location.href = '/login'
+        window.location.href = "/order"
     }
 
     return (

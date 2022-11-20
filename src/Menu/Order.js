@@ -14,8 +14,10 @@ export default function Order() {
                     "x-access-token": token
                 }
             }
-            );
-            setReceipt(orders.data);
+            ).catch(function (err) {
+                // console.log(err)
+            });
+            setReceipt(orders?.data);
         }
         getOrder();
     }, [token]);
