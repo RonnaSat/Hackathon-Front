@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export default function Home() {
     const [products, setProducts] = useState([]);
-    const [token, setToken] = useState('');
+    const token = JSON.parse(localStorage.getItem('token'));
 
     useEffect(() => {
         async function getProducts() {
@@ -15,13 +15,11 @@ export default function Home() {
             setProducts(products.data);
         }
         getProducts();
-        setToken(JSON.parse(localStorage.getItem('token')));
     }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         token ? window.location.href = '/select' : window.location.href = '/login'
-
     }
 
     return (
@@ -61,7 +59,7 @@ export default function Home() {
                 <div className='col-12 d-flex justify-content-center'>
                     <div class="row row-cols-2">
                         {products?.map((product) =>
-                            <div className='p-2 p-sm-3 d-flex justify-content-center'>
+                            <div key={product._id} className='p-4 p-sm-5 d-flex justify-content-center'>
                                 <div className="card mb-3" style={{ maxWidth: 540 }}>
                                     <div className="row g-0">
                                         <div className="col-md-4 btn-pp align-items-center d-flex">
