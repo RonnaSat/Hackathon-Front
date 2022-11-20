@@ -16,7 +16,7 @@ export default function Navbar() {
                             </li>
                             <li className=" nav-item">
                                 <div >
-                                    <img className='w-30' src='img/logo.png'></img>
+                                    <img className='w-30' src='../img/logo.png' alt=''></img>
                                 </div>
                             </li>
                             <li className="nav-item">

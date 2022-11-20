@@ -32,7 +32,8 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/order" element={<Order />} />
+      <Route path="/order/:productName" element={<Order />} />
+      <Route path="/order/" element={<Order />} />
       {/* <Route path="/select" element={<Select />} /> */}
       {/* <Route path="/sidebar" element={<Sidebar />} /> */}
       {/* <Route path="/signin-admin" element={<Signin />} /> */}

@@ -19,7 +19,8 @@ export default function Home() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        window.location.href = "/order"
+        const query = e.target[0].value
+        window.location.href = `/order/${query}`
     }
 
     return (
@@ -75,7 +76,10 @@ export default function Home() {
                                                 <p className="card-text">Brand Product</p>
                                                 <hr></hr>
                                                 <div className='d-flex justify-content-md-center'>
-                                                    <form onSubmit={handleSubmit}><button class="btn-or btn badge text-uppercase fs-6" type="submit">get free</button></form>
+                                                    <form onSubmit={handleSubmit}>
+
+                                                        <button class="btn-or btn badge text-uppercase fs-6" value={product.productName} type="submit">get free</button>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
