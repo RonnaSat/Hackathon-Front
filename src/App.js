@@ -12,6 +12,7 @@ import Register from './Menu/Register';
 import Receipt from './Menu/Receipt';
 import Select from './Menu/Select';
 import Review from './Menu/Review';
+import Order from "./Menu/Order";
 
 /*admin*/
 import Sidebar from "./Component/Sidebar";
@@ -31,8 +32,8 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="receipt" element={<Receipt />} />
-      <Route path="/select" element={<Select />} />
+      <Route path="/order" element={<Order />} />
+      {/* <Route path="/select" element={<Select />} /> */}
       {/* <Route path="/sidebar" element={<Sidebar />} /> */}
       {/* <Route path="/signin-admin" element={<Signin />} /> */}
       {/* <Route path="/home_admin" element={<Home_admin />} /> */}
