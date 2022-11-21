@@ -1,8 +1,22 @@
 import React from 'react';
 import Footer from '../Component/Footer';
 import Navbar from '../Component/Navbar';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+export default function Receipt({ receipt, token }) {
 
-export default function Receipt({ receipt }) {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (receipt && token) {
+            axios.delete('http://localhost:8000/order/deleteOrder', {
+                headers: {
+                    authorization: token
+                }
+            })
+            window.location.href = `/`
+        }
+
+    }
     console.log(receipt)
     return (
         <>
@@ -64,12 +78,10 @@ export default function Receipt({ receipt }) {
                         </div>
                     </div>
                     <div className='pt-3 d-flex justify-content-end'>
-                        <button class="btn btn-green m-3 fw-bold" type="submit">CONFIRM</button>
-                        <button class="btn btn-or m-3 fw-bold" type="submit">CANCEL</button>
+                        <Link to="/review" class="btn btn-green m-3 fw-bold" type="submit">CONFIRM</Link>
+                        <form onSubmit={handleSubmit}><button class="btn btn-or m-3 fw-bold" type="submit">CANCEL</button></form>
                     </div>
-
                 </div>
-
             </div>
 
             <Footer />

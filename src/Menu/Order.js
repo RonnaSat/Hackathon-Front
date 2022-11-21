@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Receipt from './Receipt';
 import Select from './Select';
-
+import Home from './Home';
 export default function Order() {
     const token = JSON.parse(localStorage.getItem('token'));
     const { productName } = useParams();
@@ -24,16 +24,21 @@ export default function Order() {
         getOrder();
     }, [token]);
     console.log(receipt)
+
     if (!token) {
         window.location.href = "/login";
     } else {
         if (receipt) {
             return (
-                <Receipt receipt={receipt} />
+                <Receipt receipt={receipt} token={token} />
             );
-        } else {
+        } else if (productName) {
             return (
                 <Select productName={productName} />
+            );
+        } else if (!productName && !receipt) {
+            return (
+                <Home />
             );
         }
 

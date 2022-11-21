@@ -29,7 +29,7 @@ export default function Select({ productName }) {
                 console.log(error)
             })
             if (stat) {
-                window.location.href("/order")
+                window.location.href = '/order'
             }
         }
 

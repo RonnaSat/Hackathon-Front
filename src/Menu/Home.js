@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Footer from '../Component/Footer';
 import Navbar from '../Component/Navbar';
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
 export default function Home() {
     const [products, setProducts] = useState([]);
     const token = JSON.parse(localStorage.getItem('token'));
@@ -21,7 +21,9 @@ export default function Home() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const params = e.target[0].value
-        window.location.href = `/order/${params}`
+        // window.location.href = `/order/${params}`
+        console.log(params);
+        return `/order/${params}`
     }
 
     return (
@@ -57,7 +59,7 @@ export default function Home() {
                 <div>
                     <p class="text-center fw-bold card-body3 p-5 fs-2 ps-5">PERFUME</p>
                 </div>
-
+                <div id="preloader"></div>
                 <div className='col-12 d-flex justify-content-center'>
                     <div class="row row-cols-2">
                         {products?.map((product) =>
@@ -77,10 +79,7 @@ export default function Home() {
                                                 <p className="card-text">Brand Product</p>
                                                 <hr></hr>
                                                 <div className='d-flex justify-content-md-center'>
-                                                    <form onSubmit={handleSubmit}>
-
-                                                        <button class="btn-or btn badge text-uppercase fs-6" value={product.productName} type="submit">get free</button>
-                                                    </form>
+                                                    <Link to={`/order/${product.productName}`} class="btn-or btn badge text-uppercase fs-6" type="submit">get free</Link>
                                                 </div>
                                             </div>
                                         </div>
