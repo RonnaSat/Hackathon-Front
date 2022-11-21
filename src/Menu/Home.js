@@ -88,7 +88,7 @@ export default function Home() {
                                                 <h5 className="card-title">{product.productName}</h5>
                                                 <p className="card-text text-truncate">{product.productDescription}</p>
                                                 <hr></hr>
-                                                <p className="card-text">Brand Product</p>
+                                                <p className="card-text">You can get this product for free.</p>
                                                 <hr></hr>
                                                 <div className='d-flex justify-content-md-center'>
                                                     <Link to={`/order/${product.productName}`} class="btn-or btn badge text-uppercase fs-6" type="submit">get free</Link>

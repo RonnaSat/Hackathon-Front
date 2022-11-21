@@ -54,7 +54,7 @@ export default function Add_product() {
 
     }
 
-    console.log(productName, productLocation, productQuantity, productDescription, productContacts);
+    console.log(productName, productLocation, productQuantity, productDescription, productContacts, productImageBase64);
     return (
         <><Sidebar />
             <div class="content">
@@ -67,8 +67,13 @@ export default function Add_product() {
                     </div>
                     <div className='d-flex justify-content-center col-12'>
                         <div className='col-9 '>
-                            <div class="row m-2">
-                                <input type="file" name='file' ref={inputFileRef} onChange={imgHandChange} />
+                            <div class="row m-2 d-flex justify-content-center">
+                                <label for="fileImgAddimg" className="d-flex justify-content-end bg-white border col-5 col-sm-4 rounded-3 p-2 mb-3 align-items-center">
+                                    <div className=' d-flex justify-content-center'>
+                                        <input type="file" name="file" id="fileImgAddimg" ref={inputFileRef} onChange={imgHandChange}></input>
+                                    </div>
+                                </label>
+
                                 <div class="inform col">
                                     <div>
                                         <div class="container ">
@@ -115,8 +120,8 @@ export default function Add_product() {
                                                 </div>
 
                                                 <h5 class="card-body3 fw-bold">Contact</h5>
-                                                <div className="input-group input-group-sm mb-3">
-                                                    <div className='contact d-flex justify-content-start row'>
+                                                <div className="input-group input-group-sm mb-3 col-12">
+                                                    <div className='contact d-flex justify-content-around row'>
 
                                                         <div className="col input-group input-group-sm ">
                                                             <a href="#"><i class="iconn1 bi bi-instagram me-3"></i></a>

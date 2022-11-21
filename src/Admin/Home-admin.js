@@ -58,7 +58,7 @@ export default function Home_product() {
                                             <div class="row">
                                                 <div class="col bg-light rounded-3 col-2">
                                                     <div class="d-flex ">
-                                                        <img src='./img/113.png' className="img-fluid rounded-start" alt="..." />
+                                                        <img src={product.productImageBase64} className="img-fluid rounded-start" alt="..." />
                                                     </div>
                                                 </div>
                                                 <div class="col m-2">
