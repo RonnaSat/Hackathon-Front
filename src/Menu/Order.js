@@ -14,7 +14,7 @@ export default function Order() {
             const orders = await axios.get(
                 `http://localhost:8000/order/getOrder`, {
                 headers: {
-                    "x-access-token": token
+                    authorization: token
                 }
             }
             ).catch(function (err) {
@@ -38,7 +38,7 @@ export default function Order() {
             return (
                 <Select productName={productName} />
             );
-        } else if (receiptStat === "No Order") {
+        } else if (receiptStat === "No Order" || receiptStat === "Order failed") {
             window.location.href = '/';
         }
 
