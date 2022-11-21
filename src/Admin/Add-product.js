@@ -1,7 +1,9 @@
 import React from 'react';
 import Sidebar from '../Component/Sidebar';
+import Basic from "../Component/dropzone";
 
 export default function Add_product() {
+    
     return (
         <><Sidebar />
             <div class="content">
@@ -15,10 +17,8 @@ export default function Add_product() {
                     <div className='d-flex justify-content-center col-12'>
                         <div className='col-9 '>
                             <div class="row m-2">
-                                <div class="im-photo col-5 rounded-4 bg-white ">
-                                    <div className='d-flex justify-content-center align-items-center h-100'><i class="bi bi-plus fs-2"></i></div>
-                                </div>
-                                <div class="inform col-7">
+                                <Basic/>
+                                <div class="inform col">
                                     <div>
                                         <div class="container ">
                                             <div class="col m-1">
@@ -62,28 +62,7 @@ export default function Add_product() {
                                                         <label htmlFor="floatingInput">Number of products</label>
                                                     </div>
                                                 </div>
-                                                <div class="d-grid gap-2 col-3 mx-auto">
-                                                    <button class="btn btn-green fw-bold" type="button">Add location and number</button>
-                                                </div>
-                                                <div class="p-4 border btn-sky rounded-3 my-4">
-                                                    <h4 className="card-title d-flex justify-content-center fw-bold">Branches and number of products</h4>
-                                                    <div class="row my-2">
-                                                        <div class="col px-5 fs-5">
-                                                            Branch
-                                                        </div>
-                                                        <div class="col d-flex justify-content-end px-5 fs-5">
-                                                            Item
-                                                        </div>
-                                                    </div>
-                                                    <div class="row my-2">
-                                                        <div class="col px-5">
-                                                            EVEANDBOY MAYA CNX
-                                                        </div>
-                                                        <div class="col d-flex justify-content-end px-5">
-                                                            100
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                
                                                 <h5 class="card-body3 fw-bold">Contact</h5>
                                                 <div className="input-group input-group-sm mb-3">
                                                     <div className='contact d-flex justify-content-start row'>
@@ -114,7 +93,7 @@ export default function Add_product() {
                                         </div>
 
                                     </div>
-                                    <div class="d-grid gap-2 col-5 mx-auto my-4 ">
+                                    <div class="d-grid gap-2 col-5 mx-auto my-5 ">
                                         <button class="btn btn-purple fw-bold" type="button">ADD NEW PRODUCT</button>
                                     </div>
                                 </div>
