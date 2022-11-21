@@ -3,7 +3,7 @@ import Sidebar from '../Component/Sidebar';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 export default function Home_product() {
-    const token = JSON.parse(localStorage.getItem('token'));
+    const token = JSON.parse(localStorage.getItem('tokenAdmin'));
     const [products, setProducts] = useState([]);
 
     if (!token) window.location.href = 'signin-admin';
@@ -21,7 +21,11 @@ export default function Home_product() {
 
     function handleClick(product) {
         console.log(product._id);
-        axios.delete(`http://localhost:8000/product/${product._id}`)
+        axios.delete(`http://localhost:8000/product/${product._id}`, {
+            headers: {
+                authorization: token
+            }
+        })
             .then((response) => {
                 console.log(response);
                 alert("Delete success");
@@ -30,10 +34,10 @@ export default function Home_product() {
                 console.log(error);
                 alert("Delete error");
             })
-     
+
     }
 
-          
+
     console.log(products);
     return (
         <>
@@ -41,7 +45,7 @@ export default function Home_product() {
             <div class="content">
                 <div>
                     <div className='img my-4 d-flex justify-content-center'>
-                        <img src='img/logo.png'></img>
+                        <img src='../img/logo.png' alt='img'></img>
                     </div>
                     <div className='col-12 d-flex justify-content-center  mb-4'>
                         <h4 class="text-center fw-bold card-body3">HOME</h4>

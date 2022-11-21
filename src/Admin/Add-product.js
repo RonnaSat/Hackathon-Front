@@ -1,11 +1,13 @@
 import React, { useState, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 import Sidebar from '../Component/Sidebar';
-import Basic from "../Component/dropzone";
 import axios from 'axios';
 
 export default function Add_product() {
-    const token = JSON.parse(localStorage.getItem('token'));
-    if (!token) window.location.href = 'signin-admin';
+    const { productName: test } = useParams();
+    console.log(test)
+    const token = JSON.parse(localStorage.getItem('tokenAdmin'));
+    if (!token) window.location.href = '/signin-admin';
     const [productName, setProductName] = useState('')
     const [productLocation, setProductLocation] = useState('')
     const [productQuantity, setProductQuantity] = useState('')
@@ -61,7 +63,7 @@ export default function Add_product() {
             <div class="content">
                 <div>
                     <div className='img my-4 d-flex justify-content-center'>
-                        <img src='img/logo.png'></img>
+                        <img src='../img/logo.png'></img>
                     </div>
                     <div className='col-12 d-flex justify-content-center mb-4'>
                         <h4 class="text-center fw-bold card-body3">ADD PRODUCT</h4>

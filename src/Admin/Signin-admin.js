@@ -21,8 +21,8 @@ export default function Signin() {
             setStatus(error.response.data)
         })
         if (stat?.data) {
-            localStorage.setItem('token', JSON.stringify(stat.data))
-            setToken(JSON.parse(localStorage.getItem('token')))
+            localStorage.setItem('tokenAdmin', JSON.stringify(stat.data))
+            setToken(JSON.parse(localStorage.getItem('tokenAdmin')))
             window.location.href = '/home_admin';
         }
     };

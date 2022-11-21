@@ -38,11 +38,12 @@ function App() {
       <Route path="/order/" element={<Order />} />
       <Route path="/select" element={<Select />} />
       <Route path="/review" element={<Review />} />
-      
+
       <Route path="/sidebar" element={<Sidebar />} />
       <Route path="/signin-admin" element={<Signin />} />
       <Route path="/home_admin" element={<Home_admin />} />
       <Route path="/add_product" element={<Add_product />} />
+      <Route path="/add_product/:productName" element={<Add_product />} />
       <Route path="/review_admin" element={<Review_admin />} />
       <Route path="*" element={<Error />} />
 
