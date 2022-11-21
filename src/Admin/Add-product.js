@@ -51,6 +51,7 @@ export default function Add_product() {
             console.log(error.response.data)
         })
         console.log(stat)
+        window.location.reload()
 
     }
 
@@ -68,7 +69,7 @@ export default function Add_product() {
                     <div className='d-flex justify-content-center col-12'>
                         <div className='col-9 '>
                             <div class="row m-2 d-flex justify-content-center">
-                                <label for="fileImgAddimg" className="d-flex justify-content-end bg-white border col-5 col-sm-4 rounded-3 p-2 mb-3 align-items-center">
+                                <label for="fileImgAddimg" className="d-flex justify-content-end bg-white border col-5 col-sm-4 rounded-3  align-items-center">
                                     <div className=' d-flex justify-content-center'>
                                         <input type="file" name="file" id="fileImgAddimg" ref={inputFileRef} onChange={imgHandChange}></input>
                                     </div>

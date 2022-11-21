@@ -67,14 +67,17 @@ export default function Home_product() {
                                     <div class="p-4 border bg-pp rounded-3 mb-5">
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col bg-light rounded-3 col-2">
-                                                    <div class="d-flex ">
-                                                        <img src={product.productImageBase64} className="img-fluid rounded-start" alt="..." />
+                                                <div class="col rounded-3 col-2">
+                                                    <div class="d-flex align-items-center">
+                                                        <img src={product.productImageBase64} className="img-fluid d-flex h-100" alt="..." />
                                                     </div>
                                                 </div>
                                                 <div class="col m-2">
-                                                    <h5 className="card-title pt-3 fw-bold pb-2">{product.productName}</h5>
-                                                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                    <h4 className="card-title pt-3 fw-bold pb-2">{product.productName}</h4>
+                                                    <p className="card-text ">{product.productDescription}</p>
+                                                    <hr></hr>
+                                                    <h5 className="card-title fw-bold pb-2">Branch</h5>
+                                                    <p className="card-text">{product.productLocation}</p>
                                                 </div>
                                                 <div class="row col-3 ">
                                                     <div class="col col-6 d-flex justify-content-end align-items-center" >
