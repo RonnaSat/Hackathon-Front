@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../Component/Footer';
 import Sidebar from '../Component/Sidebar';
 import PieRechartComponent from "../Component/PieRechartComponent";
 
@@ -8,11 +7,11 @@ export default function Review_admin() {
         <>
             <Sidebar />
             <div class="content">
-                <div className='img my-5 d-flex justify-content-center'>
+                <div className='img my-3 d-flex justify-content-center'>
                     <img src='img/logo.png'></img>
                 </div>
                 <div className='d-flex justify-content-center'>
-                    <div class="p-3 col-sm-7 ">
+                    <div class="p-3 col-sm-8 ">
 
                         <div class="pb-4 pt-4 border bg-pp rounded-3 px-5">
                             <div class="row ">
@@ -45,12 +44,47 @@ export default function Review_admin() {
                                 <div className='col-12 d-flex justify-content-center mb-4 pt-5 '>
                                     <h4 class="text-center fw-bold card-body3">REVIEW PODUCT</h4>
                                 </div>
+                                <div className='col-12 d-flex justify-content-around'>
+                                    <div className="rating px-2">
+                                        <input className="form-check-input bg-dg mx-2" type="box" />
+                                        <label className="form-check-label" >
+                                            1  Very Unsatisfied
+                                        </label>
+                                    </div>
+                                    <div className="rating px-2">
+                                        <input className="form-check-input bg-or mx-1" type="box" />
+                                        <label className="form-check-label" >
+                                            2  Unsatisfied
+                                        </label>
+                                    </div>
+                                    <div className="rating px-2">
+                                        <input className="form-check-input bg-pp mx-1" type="box" />
+                                        <label className="form-check-label" >
+                                            3  Neutral
+                                        </label>
+                                    </div>
+                                    <div className="rating px-2">
+                                        <input className="form-check-input bg-sk mx-1" type="box" />
+                                        <label className="form-check-label" >
+                                            4  Satisfied
+                                        </label>
+                                    </div>
+
+                                    <div className="rating px-2">
+                                        <input className="form-check-input bg-gn mx-1" type="box" />
+                                        <label className="form-check-label" >
+                                            5 Very Satisfied
+                                        </label>
+                                    </div>
+                                </div>
+
                                 <div class="container text-center d-flex justify-content-start">
                                     <div class="row row-cols-2 d-flex justify-content-start">
-                                        <div class="col"><PieRechartComponent /></div>
-                                        <div class="col"><PieRechartComponent /></div>
-                                        <div class="col"><PieRechartComponent /></div>
-                                        <div class="col"><PieRechartComponent /></div>
+                                
+                                        <div class="col"><h5 className=' d-flex justify-content-center mt-5 card-body3 fw-bold'>Fragrance</h5><PieRechartComponent /></div>
+                                        <div class="col"><h5 className=' d-flex justify-content-center mt-5 card-body3 fw-bold'>Longevity</h5><PieRechartComponent /></div>
+                                        <div class="col"><h5 className=' d-flex justify-content-center mt-5 card-body3 fw-bold'>Concentration</h5><PieRechartComponent /></div>
+                                        <div class="col"><h5 className=' d-flex justify-content-center mt-5 card-body3 fw-bold'>Price</h5><PieRechartComponent /></div>
                                     </div>
                                 </div>
                             </div>
@@ -93,8 +127,6 @@ export default function Review_admin() {
                         </div>
                     </div>
                 </div>
-
-                <Footer />
             </div>
         </>
     );

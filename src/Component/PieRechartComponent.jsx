@@ -46,7 +46,7 @@ class PieRechartComponent extends React.Component {
 render() {
    return (
       
-      <PieChart width={330} height={300}>
+      <PieChart width={400} height={300}>
       <Pie
          data={this.pieData}
          color="#000000"

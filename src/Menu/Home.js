@@ -34,13 +34,13 @@ export default function Home() {
                     </div>
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img src="./img/516021.jpg" className="d-block w-100 h-25rem" alt="..." />
+                            <img src="./img/bg5.jpg" className="d-block w-100 h-25rem" alt="..." />
                         </div>
                         <div className="carousel-item">
-                            <img src="./img/516021.jpg" className="d-block w-100 h-25rem" alt="./img/516021.jpg" />
+                            <img src="./img/bg6.jpg" className="d-block w-100 h-25rem" alt="./img/516021.jpg" />
                         </div>
                         <div className="carousel-item">
-                            <img src="./img/516021.jpg" className="d-block w-100 h-25rem" alt="..." />
+                            <img src="./img/bg8.jpg" className="d-block w-100 h-25rem" alt="..." />
                         </div>
                     </div>
                     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -52,16 +52,28 @@ export default function Home() {
                         <span className="visually-hidden">Next</span>
                     </button>
                 </div>
-                <div>
-                    <p class="text-center fw-bold card-body3 p-5 fs-2 ps-5">PERFUME</p>
+                <div className='d-flex justify-content-center'>
+                    <p class="text-center fw-bold card-body3 pt-5 fs-2">PERFUME</p>
+                </div>
+                <div className="container d-flex justify-content-center">
+                    <div className="row col-7 d-flex justify-content-center">
+                        <div className="col-md-8">
+                            <div className="input-group mb-3 rounded-3 ">
+                                <input type="text" className="form-control input-text m-1" placeholder="Search products...." aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                                <div className="input-group-append">
+                                    <button className="btn btn-outline-secondary btn-lg m-1" type="button"><i class="bi bi-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div className='col-12 d-flex justify-content-center'>
-                    <div class="row row-cols-2">
+                    <div class="row row-cols-2 px-4">
                         {products?.map((product) =>
-                            <div key={product._id} className='p-4 p-sm-5 d-flex justify-content-center'>
-                                <div className="card mb-3" style={{ maxWidth: 540 }}>
-                                    <div className="row g-0">
+                            <div key={product._id} className='p-4  p-sm-5 d-flex justify-content-center'>
+                                <div className="card mb-2" style={{ maxWidth: 540 }}>
+                                    <div className="row g-0 ">
                                         <div className="col-md-4 btn-pp align-items-center d-flex">
                                             <div class="d-flex ">
                                                 <img src={product.productImageBase64} className="img-fluid rounded-start" alt="..." />

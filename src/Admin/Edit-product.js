@@ -1,13 +1,16 @@
 import React from 'react';
+import Sidebar from '../Component/Sidebar';
 
 export default function Edit_product() {
     return (
         <>
+        <Sidebar />
+            <div class="content">
             <div>
-                <div className='img my-5 d-flex justify-content-center'>
+                <div className='img my-4 d-flex justify-content-center'>
                     <img src='img/logo.png'></img>
                 </div>
-                <div className='col-12 d-flex justify-content-center pb-3 mb-4'>
+                <div className='col-12 d-flex justify-content-center  mb-4'>
                     <h4 class="text-center fw-bold card-body3">EDIT PRODUCT INFORMATION </h4>
                 </div>
                 <div>
@@ -103,6 +106,7 @@ export default function Edit_product() {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </>
 

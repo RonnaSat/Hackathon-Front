@@ -9,7 +9,6 @@ import React from "react";
 import Home from './Menu/Home';
 import Login from './Menu/login';
 import Register from './Menu/Register';
-import Receipt from './Menu/Receipt';
 import Select from './Menu/Select';
 import Review from './Menu/Review';
 import Order from "./Menu/Order";
@@ -33,16 +32,16 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/order" element={<Order />} />
-      {/* <Route path="/select" element={<Select />} /> */}
-      {/* <Route path="/sidebar" element={<Sidebar />} /> */}
-      {/* <Route path="/signin-admin" element={<Signin />} /> */}
-      {/* <Route path="/home_admin" element={<Home_admin />} /> */}
-      {/* <Route path="/edit_product" element={<Edit_product />} /> */}
-      {/* <Route path="/add_product" element={<Add_product />} /> */}
+      <Route path="/select" element={<Select />} />
+      <Route path="/sidebar" element={<Sidebar />} />
+      <Route path="/signin-admin" element={<Signin />} />
+      <Route path="/home_admin" element={<Home_admin />} />
+      <Route path="/edit_product" element={<Edit_product />} />
+      <Route path="/add_product" element={<Add_product />} />
       <Route path="/review" element={<Review />} />
       <Route path="*" element={<h1>404 NOT FOUND</h1>} />
 
-      {/* <Route path="/review_admin" element={<Review_admin />} /> */}
+      <Route path="/review_admin" element={<Review_admin />} />
     </Routes>
   );
 }

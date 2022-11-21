@@ -322,3 +322,19 @@ div.content {
     float: none;
   }
 }
+
+.bg-dg{
+  background-color: #F7A691 !important;
+}
+.bg-or{
+  background-color: #F79E36 !important;
+}
+.bg-pp{
+  background-color: #D8CCE2 !important;
+}
+.bg-sk{
+  background-color: #D1E5E6 !important;
+}
+.bg-gn{
+  background-color: #D0D6B0 !important;
+}
