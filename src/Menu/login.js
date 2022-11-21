@@ -57,7 +57,7 @@ export default function Login() {
                                             <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" onChange={handChange(setEmail)} />
                                             <label htmlFor="floatingInput">Email address</label>
                                         </div>
-                                        <div className="form-floating mb-3">
+                                        <div className="form-floating mb-3 ">
                                             <input type="password" className="form-control" id="floatingPassword" placeholder="Password" onChange={handChange(setPwd)} />
                                             <label htmlFor="floatingPassword">Password</label>
                                         </div>

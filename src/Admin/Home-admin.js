@@ -18,7 +18,7 @@ export default function Home_product() {
                         <div className="row col-7 d-flex justify-content-center">
                             <div className="col-md-8">
                                 <div className="input-group mb-3 rounded-3 ">
-                                    <input type="text" className="form-control input-text m-1" placeholder="Search products...." aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                                    <input type="text" className="form-control input-text m-1" placeholder="Search products...."  aria-label="Recipient's username" aria-describedby="basic-addon2" />
                                     <div className="input-group-append">
                                         <button className="btn btn-outline-secondary btn-lg m-1" type="button"><i class="bi bi-search"></i></button>
                                     </div>

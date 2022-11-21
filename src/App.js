@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Form } from "react-router-dom";
 import React from "react";
 
 /*Component*/
@@ -17,9 +17,10 @@ import Order from "./Menu/Order";
 import Sidebar from "./Component/Sidebar";
 import Signin from './Admin/Signin-admin';
 import Home_admin from './Admin/Home-admin';
-import Edit_product from './Admin/Home-admin';
 import Add_product from './Admin/Add-product';
 import Review_admin from "./Admin/Review-admin";
+
+import Error from "./Component/Error";
 
 
 
@@ -43,7 +44,7 @@ function App() {
       <Route path="/home_admin" element={<Home_admin />} />
       <Route path="/add_product" element={<Add_product />} />
       <Route path="/review_admin" element={<Review_admin />} />
-      <Route path="*" element={<h1>404 NOT FOUND</h1>} />
+      <Route path="*" element={<Error />} />
 
       <Route path="/review_admin" element={<Review_admin />} />
     </Routes>
