@@ -19,11 +19,22 @@ export default function Home_product() {
         getProducts();
     }, [token]);
 
-    const onSubmit = async (e) => {
-        e.preventDefault();
-        console.log(e.target)
+    function handleClick(product) {
+        console.log(product._id);
+        axios.delete(`http://localhost:8000/product/${product._id}`)
+            .then((response) => {
+                console.log(response);
+                alert("Delete success");
+                window.location.reload();
+            }).catch((error) => {
+                console.log(error);
+                alert("Delete error");
+            })
+     
+    }
 
-    };
+          
+    console.log(products);
     return (
         <>
             <Sidebar />
@@ -70,9 +81,9 @@ export default function Home_product() {
                                                         <Link to='/add_product' class="bi bi-pencil-square fs-3"></Link>
                                                     </div>
                                                     <div class="col col-6 d-flex justify-content-center align-items-center">
-                                                        <form onSubmit={onSubmit}>
+                                                        <form>
                                                             <input type="hidden" />
-                                                            <button type='submit' class="bi bi-trash-fill fs-3"></button>
+                                                            <div type='submit' class="bi bi-trash-fill fs-3" onClick={() => handleClick(product)}></div>
                                                         </form>
                                                     </div>
                                                 </div>
