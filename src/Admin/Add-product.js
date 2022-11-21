@@ -59,8 +59,8 @@ export default function Add_product() {
 
     console.log(productName, productLocation, productQuantity, productDescription, productContacts, productImageBase64);
     return (
-        <><Sidebar />
-            <div class="content">
+        <>
+            <div class="container-fluid">
                 <div>
                     <div className='img my-4 d-flex justify-content-center'>
                         <img src='../img/logo.png'></img>

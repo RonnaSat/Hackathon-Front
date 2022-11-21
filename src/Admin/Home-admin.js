@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Sidebar from '../Component/Sidebar';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Add_product from './Add-product';
 export default function Home_product() {
     const token = JSON.parse(localStorage.getItem('tokenAdmin'));
     const [products, setProducts] = useState([]);
@@ -85,7 +86,26 @@ export default function Home_product() {
                                                 </div>
                                                 <div class="row col-3 ">
                                                     <div class="col col-6 d-flex justify-content-end align-items-center" >
-                                                        <Link to='/add_product' class="bi bi-pencil-square fs-3"></Link>
+                                                        {/* <Link to='/add_product' class="bi bi-pencil-square fs-3"></Link> */}
+                                                        <div>
+                                                            {/* Button trigger modal */}
+                                                            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                                Launch demo modal
+                                                            </button>
+                                                            {/* Modal */}
+                                                            <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div className="modal-dialog modal-xl">
+                                                                    <div className="modal-content">
+                                                                        <Add_product/>
+                                                                        <div className="modal-footer">
+                                                                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                            <button type="button" className="btn btn-primary">Save changes</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
                                                     </div>
                                                     <div class="col col-6 d-flex justify-content-center align-items-center">
                                                         <form>
