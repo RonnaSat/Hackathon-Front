@@ -15,7 +15,7 @@ export default function Signin() {
     };
     const onSubmit = async (e) => {
         e.preventDefault();
-        const stat = await axios.post('http://localhost:8000/adminLogin', {
+        const stat = await axios.post('http://localhost:8000/userLogin/loginAdmin', {
             email, pwd
         }).catch(function (error) {
             setStatus(error.response.data)
@@ -23,14 +23,14 @@ export default function Signin() {
         if (stat?.data) {
             localStorage.setItem('token', JSON.stringify(stat.data))
             setToken(JSON.parse(localStorage.getItem('token')))
-            window.location.href = '/';
+            window.location.href = '/home_admin';
         }
     };
 
     console.log(email, " ", pwd, " ", token)
     return (
         <>
-            <div className="container">
+            <div onLoad={onLoad} className="container">
                 <div className="row">
                     <div className="col-sm-9 col-md-5 col-lg-5 mx-auto">
                         <div className='img my-5 d-flex justify-content-center'>
@@ -48,7 +48,7 @@ export default function Signin() {
                                     <h5 className="card-title text-center mb-4 fw-light fs-5 text-uppercase fw-bold">Sign In</h5>
 
                                     <h5 className="card-title text-center mb-4 fw-light fs-5 text-uppercase fw-bold">Sign In Admin</h5>
-                                    <form>
+                                    <form onSubmit={onSubmit}>
                                         <p className='fw-bold'>Please sing in to your account</p>
                                         <div className="form-floating mb-3">
                                             <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" onChange={handChange(setEmail)} />
@@ -62,7 +62,6 @@ export default function Signin() {
                                         <div className="d-grid">
                                             <button className="btn-color btn-login text-uppercase fw-bold rounded border shadow-sm" type="submit">Sign in</button>
                                         </div>
-
                                     </form>
                                 </div>
                             </div>
