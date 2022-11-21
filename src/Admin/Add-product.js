@@ -1,9 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Sidebar from '../Component/Sidebar';
 import Basic from "../Component/dropzone";
 
+
 export default function Add_product() {
-    
+    const [productName, setProductName] = useState('')
+    const [productLocation, setProductLocation] = useState('')
+    const [productQuantity, setProductQuantity] = useState('')
+    const [productDescription, setProductDescription] = useState('')
+    const [productContacts, setProductContact] = useState([])
+    const [productImageBase64, setProductImageBase64] = useState('')
+
+    const fileToBase64 = (filename, filepath) => {
+        return new Promise((resolve) => {
+            var file = new File([filename], filepath);
+            var reader = new FileReader(); // Read file content on file loaded event
+            reader.onload = function (event) {
+                resolve(event.target.result);
+            }; // Convert data to base64
+            reader.readAsDataURL(file);
+        });
+    };
+    // const imgHandChange = async (e) => {
+    //     setData(await fileToBase64(inputFileRef.current.files[0]))
+    //     console.log(data)
+    // };
+    const handChange = (fn) => {
+        return (event) => {
+            fn(event.target.value);
+        };
+    };
+
+
+    console.log(productImageBase64);
     return (
         <><Sidebar />
             <div class="content">
@@ -17,7 +46,8 @@ export default function Add_product() {
                     <div className='d-flex justify-content-center col-12'>
                         <div className='col-9 '>
                             <div class="row m-2">
-                                <Basic/>
+                                {/* <Basic setProductImageBase64={setProductImageBase64} /> */}
+                                {/* <input type="file" name='file' ref={inputFileRef} onChange={handChange} /> */}
                                 <div class="inform col">
                                     <div>
                                         <div class="container ">
@@ -62,7 +92,7 @@ export default function Add_product() {
                                                         <label htmlFor="floatingInput">Number of products</label>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <h5 class="card-body3 fw-bold">Contact</h5>
                                                 <div className="input-group input-group-sm mb-3">
                                                     <div className='contact d-flex justify-content-start row'>
