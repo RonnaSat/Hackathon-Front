@@ -46,7 +46,7 @@ export default function Signin() {
                             <div className="card-body p-4 p-sm-5 rounded">
                                 <div>
                                     <h5 className="card-title text-center mb-4 fw-light fs-5 text-uppercase fw-bold">Sign In</h5>
-                                    <form onSubmit={onSubmit}>
+
                                     <h5 className="card-title text-center mb-4 fw-light fs-5 text-uppercase fw-bold">Sign In Admin</h5>
                                     <form>
                                         <p className='fw-bold'>Please sing in to your account</p>
