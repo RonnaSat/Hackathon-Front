@@ -1,13 +1,10 @@
 import React, { useState, useRef } from 'react';
-import { useParams } from 'react-router-dom';
 import Sidebar from '../Component/Sidebar';
 import axios from 'axios';
 
 export default function Add_product() {
-    const { productName: test } = useParams();
-    console.log(test)
     const token = JSON.parse(localStorage.getItem('tokenAdmin'));
-    if (!token) window.location.href = '/signin-admin';
+    if (!token) window.location.href = 'signin-admin';
     const [productName, setProductName] = useState('')
     const [productLocation, setProductLocation] = useState('')
     const [productQuantity, setProductQuantity] = useState('')
@@ -53,7 +50,6 @@ export default function Add_product() {
             console.log(error.response.data)
         })
         console.log(stat)
-        window.location.reload()
 
     }
 
@@ -63,7 +59,7 @@ export default function Add_product() {
             <div class="content">
                 <div>
                     <div className='img my-4 d-flex justify-content-center'>
-                        <img src='../img/logo.png'></img>
+                        <img src='img/logo.png'></img>
                     </div>
                     <div className='col-12 d-flex justify-content-center mb-4'>
                         <h4 class="text-center fw-bold card-body3">ADD PRODUCT</h4>
@@ -71,7 +67,7 @@ export default function Add_product() {
                     <div className='d-flex justify-content-center col-12'>
                         <div className='col-9 '>
                             <div class="row m-2 d-flex justify-content-center">
-                                <label for="fileImgAddimg" className="d-flex justify-content-end bg-white border col-5 col-sm-4 rounded-3  align-items-center">
+                                <label for="fileImgAddimg" className="d-flex justify-content-end bg-white border col-5 col-sm-4 rounded-3 p-2 mb-3 align-items-center">
                                     <div className=' d-flex justify-content-center'>
                                         <input type="file" name="file" id="fileImgAddimg" ref={inputFileRef} onChange={imgHandChange}></input>
                                     </div>

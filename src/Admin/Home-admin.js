@@ -85,7 +85,7 @@ export default function Home_product() {
                                                 </div>
                                                 <div class="row col-3 ">
                                                     <div class="col col-6 d-flex justify-content-end align-items-center" >
-                                                        <Link to='/add_product' class="bi bi-pencil-square fs-3"></Link>
+                                                        <Link to={`/add_product/${product._id}`} class="bi bi-pencil-square fs-3"></Link>
                                                     </div>
                                                     <div class="col col-6 d-flex justify-content-center align-items-center">
                                                         <form>
