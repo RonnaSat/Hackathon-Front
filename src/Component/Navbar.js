@@ -9,21 +9,21 @@ export default function Navbar() {
                     <div className="collapse navbar-collapse d-flex justify-content-around" id="navbarNav">
                         <ul className="navbar-nav d-flex justify-content-around align-items-center col-5">
                             <li className="nav-item">
-                                <Link to="/" className="nav-link fw-bold">HOME</Link>
+                                <Link to="/" className="nav-link fw-bold text-decoration-none">HOME</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/order" className="nav-link fw-bold">ORDER</Link>
+                                <Link to="/order" className="nav-link fw-bold text-decoration-none">ORDER</Link>
                             </li>
                             <li className=" nav-item">
                                 <div >
-                                    <img className='w-30' src='img/logo.png'></img>
+                                    <img className='w-30' src='../img/logo.png' alt=''></img>
                                 </div>
                             </li>
                             <li className="nav-item">
-                                <Link to="/review" className="nav-link fw-bold">REVIEW</Link>
+                                <Link to="/review" className="nav-link fw-bold text-decoration-none">REVIEW</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/login" className="nav-link fw-bold">LOGOUT</Link>
+                                <Link to="/login" className="nav-link fw-bold text-decoration-none">LOGOUT</Link>
                             </li>
                         </ul>
                     </div>

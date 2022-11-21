@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Receipt from './Receipt';
 import Select from './Select';
-
+import Home from './Home';
 export default function Order() {
     const token = JSON.parse(localStorage.getItem('token'));
+    const { productName } = useParams();
     const [receipt, setReceipt] = useState('');
     useEffect(() => {
         async function getOrder() {
@@ -15,27 +17,28 @@ export default function Order() {
                 }
             }
             ).catch(function (err) {
-                // console.log(err)
+                console.log(err)
             });
             setReceipt(orders?.data);
         }
         getOrder();
     }, [token]);
+    console.log(receipt)
+
     if (!token) {
         window.location.href = "/login";
     } else {
         if (receipt) {
             return (
-                <Receipt receipt={receipt} />
+                <Receipt receipt={receipt} token={token} />
             );
-        } else {
-            // setTimeout(function () {
-            //     return (
-            //         <Select />
-            //     );
-            // }, 1000)
+        } else if (productName) {
             return (
-                <Select />
+                <Select productName={productName} />
+            );
+        } else if (!productName && !receipt) {
+            return (
+                <Home />
             );
         }
 
