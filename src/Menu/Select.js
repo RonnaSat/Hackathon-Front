@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Footer from '../Component/Footer';
 import Navbar from '../Component/Navbar';
 
 export default function Select({ productName }) {
+    if (!productName) window.location.href = "/";
     const [product, setProduct] = useState([])
     const token = JSON.parse(localStorage.getItem('token'));
     const [productLocation, setProductLocation] = useState('');
@@ -49,7 +49,6 @@ export default function Select({ productName }) {
         }
         getProduct();
     }, [token, productName]);
-    console.log(productLocation, productPickTime)
     if (product.length > 0) {
         return (
             <>

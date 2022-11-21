@@ -13,14 +13,15 @@ export default function Home() {
                 `http://localhost:8000/product/getAll`
             );
             setProducts(products.data);
+
         }
         getProducts();
-    }, []);
+    }, [token]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const query = e.target[0].value
-        window.location.href = `/order/${query}`
+        const params = e.target[0].value
+        window.location.href = `/order/${params}`
     }
 
     return (

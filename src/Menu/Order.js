@@ -32,14 +32,9 @@ export default function Order() {
                 <Receipt receipt={receipt} />
             );
         } else {
-            if (productName) {
-                return (
-                    <Select productName={productName} />
-                );
-            } else {
-                window.location.href = '/'
-            }
-
+            return (
+                <Select productName={productName} />
+            );
         }
 
     }
