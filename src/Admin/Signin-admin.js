@@ -1,6 +1,33 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import axios from 'axios';
 export default function Signin() {
+    const [email, setEmail] = useState('');
+    const [pwd, setPwd] = useState('');
+    const [token, setToken] = useState('');
+    const [status, setStatus] = useState({});
+    const onLoad = () => {
+        localStorage.clear();
+    }
+    const handChange = (fn) => {
+        return (event) => {
+            fn(event.target.value);
+        };
+    };
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        const stat = await axios.post('http://localhost:8000/adminLogin', {
+            email, pwd
+        }).catch(function (error) {
+            setStatus(error.response.data)
+        })
+        if (stat?.data) {
+            localStorage.setItem('token', JSON.stringify(stat.data))
+            setToken(JSON.parse(localStorage.getItem('token')))
+            window.location.href = '/';
+        }
+    };
+
+    console.log(email, " ", pwd, " ", token)
     return (
         <>
             <div className="container">
@@ -18,15 +45,17 @@ export default function Signin() {
                         <div className="card border-0 shadow-sm rounded-3 my-5 ">
                             <div className="card-body p-4 p-sm-5 rounded">
                                 <div>
+                                    <h5 className="card-title text-center mb-4 fw-light fs-5 text-uppercase fw-bold">Sign In</h5>
+                                    <form onSubmit={onSubmit}>
                                     <h5 className="card-title text-center mb-4 fw-light fs-5 text-uppercase fw-bold">Sign In Admin</h5>
                                     <form>
                                         <p className='fw-bold'>Please sing in to your account</p>
                                         <div className="form-floating mb-3">
-                                            <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" />
-                                            <label htmlFor="floatingInput">Email address</label>
+                                            <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" onChange={handChange(setEmail)} />
+                                            < label htmlFor="floatingInput">Email address</label>
                                         </div>
                                         <div className="form-floating mb-3">
-                                            <input type="password" className="form-control" id="floatingPassword" placeholder="Password" />
+                                            <input type="password" className="form-control" id="floatingPassword" placeholder="Password" onChange={handChange(setPwd)} />
                                             <label htmlFor="floatingPassword">Password</label>
                                         </div>
 
