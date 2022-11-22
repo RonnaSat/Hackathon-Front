@@ -38,7 +38,6 @@ export default function Add_product({ product }) {
         }
     }
     const onClick = async (e) => {
-
         e.preventDefault();
         const stat = await axios.post('http://localhost:8000/product/addProduct', {
             productName, productLocation, productQuantity, productDescription, productContacts, productImageBase64
