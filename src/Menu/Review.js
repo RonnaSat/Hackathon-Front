@@ -1,13 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect, } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import Footer from '../Component/Footer';
 import Navbar from '../Component/Navbar';
 import Rating from '../Component/Rating';
 
 export default function Review_product() {
     const token = JSON.parse(localStorage.getItem('token'));
+    const [receipt, setReceipt] = useState('');
+    const [receiptStat, setReceiptStat] = useState('')
+    
     if (!token) {
         window.location.href = "/login";
     }
+    useEffect(() => {
+        async function getOrder() {
+            const orders = await axios.get(
+                `http://localhost:8000/order/getOrder`, {
+                headers: {
+                    authorization: token
+                }
+            }
+            ).catch(function (err) {
+
+                setReceiptStat(err.response.data)
+            });
+            setReceipt(orders?.data);
+        }
+        getOrder();
+    }, [token]);
+    console.log(receipt)
 
     return (
         <>
@@ -15,7 +37,7 @@ export default function Review_product() {
             <div className='d-flex justify-content-center'>
                 <div class="p-3 col-sm-7 ">
                     <div className='col-12 d-flex justify-content-center mb-4 pt-3'>
-                        <h4 class="text-center fw-bold card-body3">REVIEW RODUCT</h4>
+                        <h4 class="text-center fw-bold card-body3">REVIEW PRODUCT</h4>
                     </div>
                     <div class="pb-4 pt-4 border bg-pp rounded-2 px-5">
                         <div class="row ">
@@ -49,11 +71,11 @@ export default function Review_product() {
                             <form className="row g-3 needs-validation" noValidate>
                                 <div className="col-md-4">
                                     <label htmlFor="validationCustom01" className="form-label">First name</label>
-                                    <input type="text" className="form-control" id="validationCustom01" required />
+                                    <input value={`${receipt.fName}`} type="text" className="form-control" id="validationCustom01" required />
                                 </div>
                                 <div className="col-md-4">
                                     <label htmlFor="validationCustom02" className="form-label">Last name</label>
-                                    <input type="text" className="form-control" id="validationCustom02" required />
+                                    <input value={`${receipt.lName}`} type="text" className="form-control" id="validationCustom02" required />
                                 </div>
                                 <div className="col-md-3">
                                     <label htmlFor="validationCustom04" className="form-label">Gender</label>

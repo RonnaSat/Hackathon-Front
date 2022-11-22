@@ -39,38 +39,38 @@ export default function Receipt({ receipt, token }) {
                                         </div>
                                     </div>
                                 </div>
-                                <div>
+                                <div className='col-12'>
 
                                     <div class="row justify-content-center">
-                                        <div class="user col-2 fw-bold d-flex justify-content-start">
+                                        <div class="user col-3 fw-bold d-flex justify-content-start">
                                             Name user
                                         </div>
-                                        <div class="user col-3 ">
+                                        <div class="user col-4 ">
                                             {`${receipt.fName} ${receipt.lName}`}
                                         </div>
                                     </div>
                                     <div class="row justify-content-center">
-                                        <div class="user col-2 fw-bold d-flex justify-content-start">
+                                        <div class="user col-3 fw-bold d-flex justify-content-start">
                                             Name product
                                         </div>
-                                        <div class="user col-3">
+                                        <div class="user col-4">
                                             {receipt.productName}
                                         </div>
                                     </div>
                                     <div class="row justify-content-center">
-                                        <div class="user col-2 fw-bold d-flex justify-content-start">
+                                        <div class="user col-3 fw-bold d-flex justify-content-start">
                                             Pickup branch
                                         </div>
-                                        <div class="user col-3">
+                                        <div class="user col-4">
                                             {receipt.productLocation}
                                         </div>
                                     </div>
                                     <div class="row justify-content-center">
-                                        <div class="user col-2 fw-bold d-flex justify-content-start">
+                                        <div class="user col-3 fw-bold d-flex justify-content-start">
                                             Time to pickup
                                         </div>
-                                        <div class="user col-3">
-                                            {receipt.productPickTime}
+                                        <div class="user col-4">
+                                            {receipt.productPickTime.split("T")[0]}
                                         </div>
                                     </div>
                                 </div>
@@ -78,8 +78,9 @@ export default function Receipt({ receipt, token }) {
                         </div>
                     </div>
                     <div className='pt-3 d-flex justify-content-end'>
+                    <form onSubmit={handleSubmit}><button class="btn btn-or m-3 fw-bold" type="submit">CANCEL</button></form>
                         <Link to="/review" class="btn btn-green m-3 fw-bold" type="submit">CONFIRM</Link>
-                        <form onSubmit={handleSubmit}><button class="btn btn-or m-3 fw-bold" type="submit">CANCEL</button></form>
+                        
                     </div>
                 </div>
             </div>

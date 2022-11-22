@@ -62,13 +62,13 @@ export default function Add_product({ product, token }) {
                         <img src='img/logo.png'></img>
                     </div>
                     <div className='col-12 d-flex justify-content-center mb-4'>
-                        <h4 class="text-center fw-bold card-body3">ADD PRODUCT</h4>
+                        <h4 class="text-center fw-bold card-body3">EDIT PRODUCT</h4>
                     </div>
                     <div className='d-flex justify-content-center col-12'>
                         <div className='col-9 '>
                             <div class="row m-2 d-flex justify-content-center">
                                 <label for="fileImgAddimg" className="d-flex justify-content-end bg-white border col-5 col-sm-4 rounded-3 p-2 mb-3 align-items-center">
-                                    <div className=' d-flex justify-content-center'>
+                                    <div className=' d-flex justify-content-center col-10'>
                                         <input type="file" name="file" id="fileImgAddimg" ref={inputFileRef} onChange={imgHandChange}></input>
                                     </div>
                                 </label>
@@ -123,7 +123,7 @@ export default function Add_product({ product, token }) {
                                                     <div className='contact d-flex justify-content-around row'>
 
                                                         <div className="col input-group input-group-sm ">
-                                                            <a href="#"><i class="iconn1 bi bi-instagram me-3"></i></a>
+                                                            <a href="#"><i class="iconn1 bi bi-instagram m-3"></i></a>
                                                             <input onChange={arrChange(0)} id="igInput" type="text" className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                                                         </div>
 

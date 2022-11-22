@@ -17,6 +17,7 @@ export default function Select({ productName }) {
 
     const onSubmit = async (e) => {
         e.preventDefault();
+        
         if (productName && productLocation && productPickTime) {
             console.log(token)
             const stat = await axios.post('http://localhost:8000/order/addOrder', {
@@ -49,6 +50,7 @@ export default function Select({ productName }) {
         }
         getProduct();
     }, [token, productName]);
+    console.log(product)
     if (product.length > 0) {
         return (
             <>
@@ -62,14 +64,14 @@ export default function Select({ productName }) {
                     <div class="row d-flex justify-content-center">
                         <div class="p-3 col-sm-7 ">
                             <h3 className="card-title my-3">{product[0].productName}</h3>
-                            <h5 className="card-title my-2">Product brand</h5>
+                            <h5 className="card-title my-2">Product Description</h5>
                             <p className="card-text">{product[0].productDescription}</p>
                             <h6 className="card-title my-3">Contact</h6>
                             <div class="social ">
-                                <a href="#"><i class="iconn-se bi bi-instagram me-4"></i></a>
-                                <a href="#"><i class="iconn-se bi bi-facebook me-4"></i></a>
-                                <a href="#"><i class="iconn-se bi bi-twitter me-4"></i></a>
-                                <a href="#"><i class="iconn-se bi bi-google me-4"></i></a>
+                                <a href={product[0]?.productContacts[0]}><i class="iconn-se bi bi-instagram me-4"></i></a>
+                                <a href={product[0]?.productContacts[1]}><i class="iconn-se bi bi-facebook me-4"></i></a>
+                                <a href={product[0]?.productContacts[2]}><i class="iconn-se bi bi-twitter me-4"></i></a>
+                                <a href={product[0]?.productContacts[3]}><i class="iconn-se bi bi-google me-4"></i></a>
                             </div>
                         </div>
                         <div class="p-3 col-sm-4">
@@ -84,12 +86,10 @@ export default function Select({ productName }) {
                                             <option selected>Select Branch</option>
                                             {product.map((prod) => <option value={prod.productLocation}>{prod.productLocation}</option>)}
                                         </select>
-                                        <select onChange={handChange(setProductPickTime)} class="form-select form-select-sm rounded-3" aria-label=".form-select-sm example">
-                                            <option selected>Select a date</option>
-                                            <option value="2022-11-30">One</option>
-                                            <option value="2022-12-01">Two</option>
-                                            <option value="2022-12-02">Three</option>
-                                        </select>
+                                        <div>
+                                            <input type="date" onChange={handChange(setProductPickTime)}  className=' rounded-3 col-12 border-0 px-2'/>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>

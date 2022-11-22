@@ -55,7 +55,7 @@ export default function Home_product() {
                         <div className="container d-flex justify-content-center">
                             <div className="row col-7 d-flex justify-content-center">
                                 <div className="col-md-8">
-                                    <div className="input-group mb-3 rounded-3 ">
+                                    <div className="input-group mb-4 rounded-3 ">
                                         <input type="text" className="form-control input-text m-1" placeholder="Search products...." aria-label="Recipient's username" aria-describedby="basic-addon2" />
                                         <div className="input-group-append">
                                             <button className="btn btn-outline-secondary btn-lg m-1" type="button"><i class="bi bi-search"></i></button>
@@ -88,18 +88,16 @@ export default function Home_product() {
                                                     <div class="col col-6 d-flex justify-content-end align-items-center" >
                                                         {/* <Link to='/add_product' class="bi bi-pencil-square fs-3"></Link> */}
                                                         <div>
-                                                            {/* Button trigger modal */}
-                                                            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                                Launch demo modal
+                                                            <button type="button" className="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                                <i class="bi bi-pencil-square"></i>
                                                             </button>
-                                                            {/* Modal */}
                                                             <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                 <div className="modal-dialog modal-xl">
                                                                     <div className="modal-content">
                                                                         <ProductEditModal product={product} token={token} />
                                                                         <div className="modal-footer">
                                                                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                            <button type="button" className="btn btn-primary">Save changes</button>
+                                                                            <button type="button" className="btn bg-gn">Save to changes</button>
                                                                         </div>
                                                                     </div>
                                                                 </div>
