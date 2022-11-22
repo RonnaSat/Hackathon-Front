@@ -1,21 +1,71 @@
 import React, { useState, useEffect, } from 'react';
-import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Footer from '../Component/Footer';
 import Navbar from '../Component/Navbar';
 import Rating from '../Component/Rating';
 
+
 export default function Review_product() {
     const token = JSON.parse(localStorage.getItem('token'));
     const [receipt, setReceipt] = useState('');
     const [receiptStat, setReceiptStat] = useState('')
+    const [agree, setAgree] = useState(false)
+    const [fname, setFname] = useState('');
+    const [lname, setLname] = useState('');
+    const [gender, setGender] = useState('');
+    const [fragrance, setFragrance] = useState('');
+    const [longevity, setLongevity] = useState('');
+    const [concentration, setConcentration] = useState('');
+    const [price, setPrice] = useState('');
+    const [comment, setComment] = useState('');
+    const [productID, setProductID] = useState('');
 
     if (!token) {
         window.location.href = "/login";
     }
+
+    const submitReview = (e) => {
+        e.preventDefault();
+        if (receipt && fname && lname && gender && fragrance && longevity && concentration && price && comment && productID) {
+            axios.post('http://localhost:8000/review/addReview', {
+                orderID: receipt._id,
+                fName: fname,
+                lName: lname,
+                gender,
+                fragrance,
+                longevity,
+                concentration,
+                price,
+                comment,
+                productID
+            }, {
+                headers: {
+                    authorization: token
+                }
+            }).catch(function (err) {
+                alert("something wrong")
+                window.location.reload();
+            }).then(function () {
+                alert("Thx for review")
+                window.location.reload();
+            })
+        } else {
+            alert("required all input");
+        }
+
+    }
+
+    const handChange = (fn) => {
+        return (event) => {
+            fn(event.target.value);
+        };
+    };
+    const validateCheckbox = () => {
+        setAgree(document.querySelector('#agreeBox').checked)
+    }
     useEffect(() => {
         async function getOrder() {
-            const orders = await axios.get(
+            await axios.get(
                 `http://localhost:8000/order/getOrder`, {
                 headers: {
                     authorization: token
@@ -23,12 +73,17 @@ export default function Review_product() {
             }
             ).catch(function (err) {
                 setReceiptStat(err.response.data)
+            }).then(function (res) {
+                setReceipt(res.data);
+                setFname(res.data.fName);
+                setLname(res.data.lName);
+                setProductID(res.data._id)
             });
-            setReceipt(orders?.data);
         }
         getOrder();
     }, [token]);
-    console.log(receipt)
+    console.log(agree, fname, lname, gender, fragrance, longevity, concentration, price, comment, productID)
+    // console.log(receipt)
     if (receipt?.orderStatus === "1") {
         return (
             <>
@@ -68,15 +123,15 @@ export default function Review_product() {
                                 <form className="row g-3 needs-validation" noValidate>
                                     <div className="col-md-4">
                                         <label htmlFor="validationCustom01" className="form-label">First name</label>
-                                        <input value={`${receipt.fName}`} type="text" className="form-control" id="validationCustom01" required />
+                                        <input defaultValue={`${receipt.fName}`} onChange={handChange(setFname)} type="text" className="form-control" id="validationCustom01" required />
                                     </div>
                                     <div className="col-md-4">
                                         <label htmlFor="validationCustom02" className="form-label">Last name</label>
-                                        <input value={`${receipt.lName}`} type="text" className="form-control" id="validationCustom02" required />
+                                        <input defaultValue={`${receipt.lName}`} onChange={handChange(setLname)} type="text" className="form-control" id="validationCustom02" required />
                                     </div>
                                     <div className="col-md-3">
                                         <label htmlFor="validationCustom04" className="form-label">Gender</label>
-                                        <select className="form-select" id="validationCustom04" required>
+                                        <select onChange={handChange(setGender)} className="form-select" id="validationCustom04" required>
                                             <option selected disabled value>Choose...</option>
                                             <option>Male</option>
                                             <option>Female</option>
@@ -84,7 +139,7 @@ export default function Review_product() {
                                     </div>
                                     <div className="col-12 pb-3">
                                         <div className="form-check">
-                                            <input className="form-check-input" type="checkbox" defaultValue id="invalidCheck" required />
+                                            <input className="form-check-input" id='agreeBox' onClick={validateCheckbox} type="checkbox" />
                                             <label className="form-check-label" htmlFor="invalidCheck">
                                                 Agree to terms and conditions
                                             </label>
@@ -93,17 +148,17 @@ export default function Review_product() {
                                 </form>
                                 <hr></hr>
                                 <h4 class="card-body3 fw-bold pb-3">Review</h4>
-                                <Rating title={'Fragrance'} />
-                                <Rating title={'Longevity'} />
-                                <Rating title={'Concentration'} />
-                                <Rating title={'Price'} />
+                                <Rating title={'Fragrance'} setData={setFragrance} handChange={handChange} />
+                                <Rating title={'Longevity'} setData={setLongevity} handChange={handChange} />
+                                <Rating title={'Concentration'} setData={setConcentration} handChange={handChange} />
+                                <Rating title={'Price'} setData={setPrice} handChange={handChange} />
                                 <p className="card-title py-2 fw-bold pt-4 pb-3">Comment</p>
                                 <div class="form-floating">
-                                    <textarea class="form-control h-100" placeholder="Leave a comment here" id="floatingTextarea2"></textarea>
+                                    <textarea onChange={handChange(setComment)} class="form-control h-100" placeholder="Leave a comment here" id="floatingTextarea2"></textarea>
                                     <label for="floatingTextarea2">Comment about product</label>
                                 </div>
                                 <div className='d-flex justify-content-center py-4 '>
-                                    <input className="btn btn-purple fw-bold btn-lg d-grid gap-2 col-6 mx-auto" type="submit" defaultValue="Submit" />
+                                    <input onClick={submitReview} className="btn btn-purple fw-bold btn-lg d-grid gap-2 col-6 mx-auto" type="submit" defaultValue="Submit" />
                                 </div>
 
                             </div>

@@ -18,7 +18,6 @@ export default function Order() {
                 }
             }
             ).catch(function (err) {
-
                 setReceiptStat(err.response.data)
             });
             setReceipt(orders?.data);
@@ -28,9 +27,11 @@ export default function Order() {
     console.log(receiptStat)
 
     if (!token) {
+        alert("Please Login");
         window.location.href = "/login";
     } else {
         if (receipt?.orderStatus === "1") {
+            alert("You have to review a tester");
             window.location.href = '/review';
         } else if (receipt) {
             return (
