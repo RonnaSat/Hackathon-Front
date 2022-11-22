@@ -18,7 +18,7 @@ export default function Review_product() {
     const [concentration, setConcentration] = useState('');
     const [price, setPrice] = useState('');
     const [comment, setComment] = useState('');
-    const [productID, setProductID] = useState('');
+    const [productName, setProductName] = useState('');
 
     if (!token) {
         window.location.href = "/login";
@@ -26,7 +26,7 @@ export default function Review_product() {
 
     const submitReview = (e) => {
         e.preventDefault();
-        if (receipt && fname && lname && gender && fragrance && longevity && concentration && price && comment && productID) {
+        if (receipt && fname && lname && gender && fragrance && longevity && concentration && price && comment && productName) {
             axios.post('http://localhost:8000/review/addReview', {
                 orderID: receipt._id,
                 fName: fname,
@@ -37,7 +37,7 @@ export default function Review_product() {
                 concentration,
                 price,
                 comment,
-                productID
+                productName
             }, {
                 headers: {
                     authorization: token
@@ -77,12 +77,12 @@ export default function Review_product() {
                 setReceipt(res.data);
                 setFname(res.data.fName);
                 setLname(res.data.lName);
-                setProductID(res.data._id)
+                setProductName(res.data.productName)
             });
         }
         getOrder();
     }, [token]);
-    console.log(agree, fname, lname, gender, fragrance, longevity, concentration, price, comment, productID)
+    console.log(agree, fname, lname, gender, fragrance, longevity, concentration, price, comment, productName)
     // console.log(receipt)
     if (receipt?.orderStatus === "1") {
         return (
@@ -172,11 +172,7 @@ export default function Review_product() {
         alert('Have not confirmed the product yet')
         window.location.href = "/order"
     }
-    else if (receiptStat === "No Order") {
-        alert('Please select tester first')
-        window.location.href = "/"
-    } else if (receiptStat === "Order failed") {
-        alert('Order failed')
+    else if (receiptStat === "No Order" || receiptStat === "Order failed") {
         window.location.href = "/"
     }
 

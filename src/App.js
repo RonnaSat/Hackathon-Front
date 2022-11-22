@@ -44,7 +44,7 @@ function App() {
       <Route path="/home_admin" element={<Home_admin />} />
       <Route path="/add_product" element={<Add_product />} />
       <Route path="/add_product/:productName" element={<Add_product />} />
-      <Route path="/review_admin" element={<Review_admin />} />
+      <Route path="/review_admin/:productName" element={<Review_admin />} />
       <Route path="*" element={<Error />} />
 
       <Route path="/review_admin" element={<Review_admin />} />

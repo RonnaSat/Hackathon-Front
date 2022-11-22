@@ -11,7 +11,7 @@ export default function Home_product() {
     const token = JSON.parse(localStorage.getItem('tokenAdmin'));
     const [products, setProducts] = useState([]);
 
-    if (!token) window.location.href = 'signin-admin';
+    if (!token) window.location.href = '/signin-admin';
     useEffect(() => {
         async function getProducts() {
             const products = await axios.get(
