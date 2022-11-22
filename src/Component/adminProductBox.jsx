@@ -2,11 +2,10 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import ProductEditModal from '../Component/modalDivContent';
 import axios from 'axios';
-export default function AdminProductBox({ product }) {
-
+export default function AdminProductBox({ product, token }) {
     const [modalShow, setModalShow] = React.useState(false);
     function handleClick(product) {
-        const token = JSON.parse(localStorage.getItem('tokenAdmin'));
+
         axios.delete(`http://localhost:8000/product/${product._id}`, {
             headers: {
                 authorization: token
@@ -56,6 +55,7 @@ export default function AdminProductBox({ product }) {
                                                     show={modalShow}
                                                     onHide={() => setModalShow(false)}
                                                     product={product}
+                                                    token={token}
                                                 />
                                             </div>
 

@@ -45,11 +45,13 @@ export default function Add_product({ product }) {
             headers: {
                 authorization: token
             }
-        }).catch(function (error) {
+        }).then(
+            alert("Add Product Successfully"),
+            window.location.reload()
+        ).catch(function (error) {
             console.log(error.response.data)
         })
         console.log(stat)
-
     }
 
     console.log(productName, productLocation, productQuantity, productDescription, productContacts, productImageBase64);
