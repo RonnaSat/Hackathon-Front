@@ -33,6 +33,7 @@ export default function Order() {
         if (receipt) {
             return (
                 <Receipt receipt={receipt} token={token} />
+                //
             );
         } else if (productName) {
             return (

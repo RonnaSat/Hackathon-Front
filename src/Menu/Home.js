@@ -71,6 +71,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+                
                 <div id="preloader"></div>
                 <div className='col-12 d-flex justify-content-center'>
                     <div class="row row-cols-2 px-4">
