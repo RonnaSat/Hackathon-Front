@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import axios from 'axios';
 
 export default function MyVerticallyCenteredModal({ show, onHide, token, product }) {
     const simProps = { show, onHide }
@@ -39,10 +40,22 @@ export default function MyVerticallyCenteredModal({ show, onHide, token, product
     }
 
     const onClick = async (e) => {
-
         e.preventDefault();
-        console.log(productName, productLocation, productQuantity, productDescription, productContacts, productImageBase64)
-
+        const stat = await axios.put('http://localhost:8000/product/updateData', {
+            _id: product._id, productName, productLocation, productQuantity, productDescription, productContacts, productImageBase64
+        }, {
+            headers: {
+                authorization: token
+            }
+        }).catch(function (error) {
+            console.log(error.response.data)
+            alert(error.response.data)
+            window.location.reload()
+        })
+        if (stat) {
+            alert("Update Product Successfully")
+            window.location.reload()
+        }
     }
 
     return (
@@ -94,7 +107,7 @@ export default function MyVerticallyCenteredModal({ show, onHide, token, product
                                                             <h5 className='card-body3 fw-bold'>Description of product</h5>
                                                         </div>
                                                         <div class="form-floating">
-                                                            <textarea onChange={handChange(setProductDescription)} value={product.productDescription} class="form-control h-100" placeholder="Leave a comment here" id="floatingTextarea2"></textarea>
+                                                            <textarea onChange={handChange(setProductDescription)} defaultValue={product.productDescription} class="form-control h-100" placeholder="Leave a comment here" id="floatingTextarea2"></textarea>
                                                             <label for="floatingTextarea2">Add description</label>
                                                         </div>
                                                     </div>
@@ -111,11 +124,11 @@ export default function MyVerticallyCenteredModal({ show, onHide, token, product
                                                             <h5 class="card-body3 fw-bold">Add location and number of product</h5>
                                                         </div>
                                                         <div className="form-floating mb-3">
-                                                            <input onChange={handChange(setProductLocation)} value={product.productLocation} type="text" className="form-control" id="floatingInput" placeholder="name@example.com" />
+                                                            <input onChange={handChange(setProductLocation)} defaultValue={product.productLocation} type="text" className="form-control" id="floatingInput" placeholder="name@example.com" />
                                                             <label htmlFor="floatingInput">Add branch</label>
                                                         </div>
                                                         <div className="form-floating mb-3">
-                                                            <input onChange={handChange(setProductQuantity)} value={product.productQuantity} type="text" className="form-control" id="floatingInput" placeholder="name@example.com" />
+                                                            <input onChange={handChange(setProductQuantity)} defaultValue={product.productQuantity} type="text" className="form-control" id="floatingInput" placeholder="name@example.com" />
                                                             <label htmlFor="floatingInput">Number of products</label>
                                                         </div>
                                                     </div>
@@ -125,24 +138,24 @@ export default function MyVerticallyCenteredModal({ show, onHide, token, product
                                                         <div className='contact d-flex justify-content-around row'>
 
                                                             <div className="col input-group input-group-sm ">
-                                                                <a href="#"><i class="iconn1 bi bi-instagram m-3"></i></a>
-                                                                <input onChange={arrChange(0)} value={product.productContacts[0]} type="text" className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                                                <a href="#"><i class="iconn1 bi bi-instagram me-3"></i></a>
+                                                                <input onChange={arrChange(0)} defaultValue={product.productContacts[0]} type="text" className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                                                             </div>
 
                                                             <div className="col input-group input-group-sm ">
                                                                 <a href="#"><i class="iconn1 bi bi-facebook m-3 "></i></a>
 
-                                                                <input type="text" onChange={arrChange(1)} value={product.productContacts[1]} className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                                                <input type="text" onChange={arrChange(1)} defaultValue={product.productContacts[1]} className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                                                             </div>
                                                             <div className="col input-group input-group-sm ">
                                                                 <a href="#"><i class="iconn1 bi bi-twitter m-3"></i></a>
 
-                                                                <input type="text" onChange={arrChange(2)} value={product.productContacts[2]} className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                                                <input type="text" onChange={arrChange(2)} defaultValue={product.productContacts[2]} className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                                                             </div>
 
                                                             <div className="col input-group input-group-sm ">
                                                                 <a href="#"><i class="iconn1 bi bi-google m-3 "></i></a>
-                                                                <input type="text" onChange={arrChange(3)} value={product.productContacts[3]} className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                                                <input type="text" onChange={arrChange(3)} defaultValue={product.productContacts[3]} className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                                                             </div>
                                                         </div>
                                                     </div>

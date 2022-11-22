@@ -54,7 +54,7 @@ export default function Home_product() {
                     </div>
 
                     {products?.map((product) =>
-                        <AdminProductBox product={product} />
+                        <AdminProductBox product={product} token={token} />
                     )}
                 </div>
             </div>
