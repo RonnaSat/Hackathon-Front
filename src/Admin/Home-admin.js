@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Sidebar from '../Component/Sidebar';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Add_product from './Add-product';
+import ProductEditModal from '../Component/modalDivContent';
 export default function Home_product() {
     const token = JSON.parse(localStorage.getItem('tokenAdmin'));
     const [products, setProducts] = useState([]);
@@ -96,7 +96,7 @@ export default function Home_product() {
                                                             <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                 <div className="modal-dialog modal-xl">
                                                                     <div className="modal-content">
-                                                                        <Add_product/>
+                                                                        <ProductEditModal product={product} token={token} />
                                                                         <div className="modal-footer">
                                                                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                                                             <button type="button" className="btn btn-primary">Save changes</button>

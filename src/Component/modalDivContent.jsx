@@ -1,17 +1,17 @@
 import React, { useState, useRef } from 'react';
-import Sidebar from '../Component/Sidebar';
 import axios from 'axios';
 
-export default function Add_product({ product }) {
-    const token = JSON.parse(localStorage.getItem('tokenAdmin'));
+export default function Add_product({ product, token }) {
     if (!token) window.location.href = 'signin-admin';
-    const [productName, setProductName] = useState('')
-    const [productLocation, setProductLocation] = useState('')
-    const [productQuantity, setProductQuantity] = useState('')
-    const [productDescription, setProductDescription] = useState('')
-    const [productContacts, setProductContact] = useState(['', '', '', ''])
-    const [productImageBase64, setProductImageBase64] = useState('')
+    const [productName, setProductName] = useState(product.productName)
+    const [productLocation, setProductLocation] = useState(product.productLocation)
+    const [productQuantity, setProductQuantity] = useState(product.productQuantity)
+    const [productDescription, setProductDescription] = useState(product.productDescription)
+    const [productContacts, setProductContact] = useState(product.productContacts)
+    const [productImageBase64, setProductImageBase64] = useState(product.productImageBase64)
     const inputFileRef = useRef(null)
+
+
     const fileToBase64 = (filename, filepath) => {
         return new Promise((resolve) => {
             var file = new File([filename], filepath);
@@ -53,9 +53,9 @@ export default function Add_product({ product }) {
 
     }
 
-    console.log(productName, productLocation, productQuantity, productDescription, productContacts, productImageBase64);
+    console.log(productName, productLocation, productQuantity, productDescription, productContacts);
     return (
-        <><Sidebar />
+        <>
             <div class="container-fluid">
                 <div>
                     <div className='img my-4 d-flex justify-content-center'>
@@ -82,8 +82,8 @@ export default function Add_product({ product }) {
                                                         <h5 className='card-body3 fw-bold'>Name product</h5>
                                                     </div>
                                                     <div className="form-floating mb-3">
-                                                        <input onChange={handChange(setProductName)} type="text" className="form-control" id="floatingInput" placeholder="name@example.com" />
-                                                        <label htmlFor="floatingInput">Add name product</label>
+                                                        <input onChange={handChange(setProductName)} type="text" className="form-control" id="productName" placeholder="name@example.com" />
+                                                        <label htmlFor="productName">Add name product</label>
                                                     </div>
 
                                                 </div>
@@ -92,8 +92,8 @@ export default function Add_product({ product }) {
                                                         <h5 className='card-body3 fw-bold'>Description of product</h5>
                                                     </div>
                                                     <div class="form-floating">
-                                                        <textarea onChange={handChange(setProductDescription)} class="form-control h-100" placeholder="Leave a comment here" id="floatingTextarea2"></textarea>
-                                                        <label for="floatingTextarea2">Add description</label>
+                                                        <textarea onChange={handChange(setProductDescription)} class="form-control h-100" placeholder="Leave a comment here" id="productDes"></textarea>
+                                                        <label for="productDes">Add description</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -109,12 +109,12 @@ export default function Add_product({ product }) {
                                                         <h5 class="card-body3 fw-bold">Add location and number of product</h5>
                                                     </div>
                                                     <div className="form-floating mb-3">
-                                                        <input onChange={handChange(setProductLocation)} type="text" className="form-control" id="floatingInput" placeholder="name@example.com" />
-                                                        <label htmlFor="floatingInput">Add branch</label>
+                                                        <input onChange={handChange(setProductLocation)} type="text" className="form-control" id="productBranch" placeholder="name@example.com" />
+                                                        <label htmlFor="productBranch">Add branch</label>
                                                     </div>
                                                     <div className="form-floating mb-3">
-                                                        <input onChange={handChange(setProductQuantity)} type="text" className="form-control" id="floatingInput" placeholder="name@example.com" />
-                                                        <label htmlFor="floatingInput">Number of products</label>
+                                                        <input onChange={handChange(setProductQuantity)} type="text" className="form-control" id="productNum" placeholder="name@example.com" />
+                                                        <label htmlFor="productNum">Number of products</label>
                                                     </div>
                                                 </div>
 
@@ -124,23 +124,22 @@ export default function Add_product({ product }) {
 
                                                         <div className="col input-group input-group-sm ">
                                                             <a href="#"><i class="iconn1 bi bi-instagram me-3"></i></a>
-                                                            <input onChange={arrChange(0)} type="text" className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                                            <input onChange={arrChange(0)} id="igInput" type="text" className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                                                         </div>
 
                                                         <div className="col input-group input-group-sm ">
                                                             <a href="#"><i class="iconn1 bi bi-facebook m-3 "></i></a>
-
-                                                            <input type="text" onChange={arrChange(1)} className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                                            <input type="text" onChange={arrChange(1)} id="fbInput" className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                                                         </div>
                                                         <div className="col input-group input-group-sm ">
                                                             <a href="#"><i class="iconn1 bi bi-twitter m-3"></i></a>
 
-                                                            <input type="text" onChange={arrChange(2)} className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                                            <input type="text" onChange={arrChange(2)} id="twInput" className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                                                         </div>
 
                                                         <div className="col input-group input-group-sm ">
                                                             <a href="#"><i class="iconn1 bi bi-google m-3 "></i></a>
-                                                            <input type="text" onChange={arrChange(3)} className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                                            <input type="text" onChange={arrChange(3)} id="gInput" className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                                                         </div>
                                                     </div>
                                                 </div>
