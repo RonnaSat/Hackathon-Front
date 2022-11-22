@@ -4,7 +4,24 @@ import Navbar from '../Component/Navbar';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 export default function Receipt({ receipt, token }) {
-
+    const confirmClick = (e) => {
+        e.preventDefault();
+        if (receipt && token) {
+            axios.put('http://localhost:8000/order/updateToReview', {
+                _id: receipt._id
+            }, {
+                headers: {
+                    authorization: token
+                }
+            }).catch(function (err) {
+                console.log(err)
+                alert('Sth Wrong')
+            }).then(function () {
+                alert('Confirmed receive')
+                window.location.href = `/review`
+            })
+        }
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
         if (receipt && token) {
@@ -78,9 +95,9 @@ export default function Receipt({ receipt, token }) {
                         </div>
                     </div>
                     <div className='pt-3 d-flex justify-content-end'>
-                    <form onSubmit={handleSubmit}><button class="btn btn-or m-3 fw-bold" type="submit">CANCEL</button></form>
-                        <Link to="/review" class="btn btn-green m-3 fw-bold" type="submit">CONFIRM</Link>
-                        
+                        <form onSubmit={handleSubmit}><button class="btn btn-or m-3 fw-bold" type="submit">CANCEL</button></form>
+                        <button onClick={confirmClick} class="btn btn-green m-3 fw-bold" type="submit">CONFIRM</button>
+
                     </div>
                 </div>
             </div>
