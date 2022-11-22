@@ -48,12 +48,12 @@ export default function MyVerticallyCenteredModal({ show, onHide, token, product
     return (
         <Modal
             {...simProps}
-            size="lg"
+            size="xl"
             aria-labelledby="contained-modal-title-vcenter"
             centered
         >
             <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title-vcenter">
+                <Modal.Title id="contained-modal-title-vcenter ">
                     {product?.productName}
                 </Modal.Title>
             </Modal.Header>
@@ -64,13 +64,13 @@ export default function MyVerticallyCenteredModal({ show, onHide, token, product
                             <img src='img/logo.png' alt='???'></img>
                         </div>
                         <div className='col-12 d-flex justify-content-center mb-4'>
-                            <h4 class="text-center fw-bold card-body3">ADD PRODUCT</h4>
+                            <h4 class="text-center fw-bold card-body3">EDIT PRODUCT</h4>
                         </div>
                         <div className='d-flex justify-content-center col-12'>
                             <div className='col-9 '>
                                 <div class="row m-2 d-flex justify-content-center">
                                     <label for="fileImgAddimg" className="d-flex justify-content-end bg-white border col-5 col-sm-4 rounded-3 p-2 mb-3 align-items-center">
-                                        <div className=' d-flex justify-content-center'>
+                                        <div className=' d-flex justify-content-center col-10'>
                                             <input type="file" name="file" id="fileImgAddimg" ref={inputFileRef} onChange={imgHandChange}></input>
                                         </div>
                                     </label>
@@ -125,7 +125,7 @@ export default function MyVerticallyCenteredModal({ show, onHide, token, product
                                                         <div className='contact d-flex justify-content-around row'>
 
                                                             <div className="col input-group input-group-sm ">
-                                                                <a href="#"><i class="iconn1 bi bi-instagram me-3"></i></a>
+                                                                <a href="#"><i class="iconn1 bi bi-instagram m-3"></i></a>
                                                                 <input onChange={arrChange(0)} value={product.productContacts[0]} type="text" className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                                                             </div>
 
@@ -160,8 +160,9 @@ export default function MyVerticallyCenteredModal({ show, onHide, token, product
                 </div>
             </Modal.Body>
             <Modal.Footer>
-                <Button onClick={onClick} class="btn btn-purple fw-bold" type="button">Update Product</Button>
-                <Button onClick={simProps.onHide}>Close</Button>
+            <Button onClick={simProps.onHide} class="btn bg-or text-uppercase fw-bold" >Close</Button>
+                <Button onClick={onClick} class="btn bg-gn fw-bold text-uppercase" type="button">Update Product</Button>
+                
             </Modal.Footer>
         </Modal>
     );
