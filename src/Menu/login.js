@@ -5,7 +5,6 @@ export default function Login() {
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
     const [token, setToken] = useState('');
-    const [status, setStatus] = useState({});
     const onLoad = () => {
         localStorage.clear();
     }
@@ -19,7 +18,8 @@ export default function Login() {
         const stat = await axios.post('http://localhost:8000/userLogin', {
             email, pwd
         }).catch(function (error) {
-            setStatus(error.response.data)
+            alert('Sth wrong')
+            window.location.reload();
         })
         if (stat?.data) {
             localStorage.setItem('token', JSON.stringify(stat.data))
