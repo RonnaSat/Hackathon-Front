@@ -40,6 +40,9 @@ export default function AdminProductBox({ product, token }) {
                                         <hr></hr>
                                         <h5 className="card-title fw-bold pb-2">Branch</h5>
                                         <p className="card-text">{product.productLocation}</p>
+                                        <hr></hr>
+                                        <h5 className="card-title fw-bold pb-2">Quantity</h5>
+                                        <p className="card-text"></p>
                                     </div>
                                     <div class="row col-3 ">
                                         <div class="col col-6 d-flex justify-content-end align-items-center" >

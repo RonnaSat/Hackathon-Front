@@ -66,7 +66,7 @@ export default function MyVerticallyCenteredModal({ show, onHide, token, product
             centered
         >
             <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title-vcenter ">
+                <Modal.Title id="contained-modal-title-vcenter" className='bg.pp'>
                     {product?.productName}
                 </Modal.Title>
             </Modal.Header>
@@ -138,7 +138,7 @@ export default function MyVerticallyCenteredModal({ show, onHide, token, product
                                                         <div className='contact d-flex justify-content-around row'>
 
                                                             <div className="col input-group input-group-sm ">
-                                                                <a href="#"><i class="iconn1 bi bi-instagram me-3"></i></a>
+                                                                <a href="#"><i class="iconn1 bi bi-instagram m-3"></i></a>
                                                                 <input onChange={arrChange(0)} defaultValue={product.productContacts[0]} type="text" className="form-control rounded-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                                                             </div>
 
@@ -174,7 +174,7 @@ export default function MyVerticallyCenteredModal({ show, onHide, token, product
             </Modal.Body>
             <Modal.Footer>
             <Button onClick={simProps.onHide} class="btn bg-or text-uppercase fw-bold" >Close</Button>
-                <Button onClick={onClick} class="btn bg-gn fw-bold text-uppercase" type="button">Update Product</Button>
+                <Button onClick={onClick} class="btn bg-gn fw-bold text-uppercase " type="button">Update Product</Button>
                 
             </Modal.Footer>
         </Modal>
