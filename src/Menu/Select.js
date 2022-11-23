@@ -17,7 +17,7 @@ export default function Select({ productName }) {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        
+
         if (productName && productLocation && productPickTime) {
             console.log(token)
             const stat = await axios.post('http://localhost:8000/order/addOrder', {
@@ -87,9 +87,8 @@ export default function Select({ productName }) {
                                             {product.map((prod) => <option value={prod.productLocation}>{prod.productLocation}</option>)}
                                         </select>
                                         <div>
-                                            <input type="date" onChange={handChange(setProductPickTime)}  className=' rounded-3 col-12 border-0 px-2'/>
+                                            <input type="date" onChange={handChange(setProductPickTime)} className=' rounded-3 col-12 border-0 px-2' />
                                         </div>
-
                                     </div>
                                 </div>
                             </div>

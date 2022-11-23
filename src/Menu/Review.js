@@ -26,7 +26,7 @@ export default function Review_product() {
 
     const submitReview = (e) => {
         e.preventDefault();
-        if (receipt && fname && lname && gender && fragrance && longevity && concentration && price && comment && productName) {
+        if (agree && receipt && fname && lname && gender && fragrance && longevity && concentration && price && comment && productName) {
             axios.post('http://localhost:8000/review/addReview', {
                 orderID: receipt._id,
                 fName: fname,
@@ -82,8 +82,8 @@ export default function Review_product() {
         }
         getOrder();
     }, [token]);
-    console.log(agree, fname, lname, gender, fragrance, longevity, concentration, price, comment, productName)
-    // console.log(receipt)
+    // console.log(agree, fname, lname, gender, fragrance, longevity, concentration, price, comment, productName)
+    console.log(agree)
     if (receipt?.orderStatus === "1") {
         return (
             <>

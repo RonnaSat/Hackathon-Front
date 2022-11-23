@@ -15,7 +15,7 @@ export default function Home_product() {
     useEffect(() => {
         async function getProducts() {
             const products = await axios.get(
-                `http://localhost:8000/product/getAll`
+                `http://localhost:8000/product/adminGetAll`
             );
             setProducts(products.data);
 
