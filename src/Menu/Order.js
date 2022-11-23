@@ -27,7 +27,7 @@ export default function Order() {
     console.log(receiptStat)
 
     if (!token) {
-        alert("Please Login");
+
         window.location.href = "/login";
     } else {
         if (receipt?.orderStatus === "1") {

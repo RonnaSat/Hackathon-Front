@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Footer from '../Component/Footer';
 import Navbar from '../Component/Navbar';
+import HomeProductBox from '../Component/HomeProductBox';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
     useEffect(() => {
         async function getProducts() {
             const products = await axios.get(
-                `http://localhost:8000/product/getAll`
+                `http://localhost:8000/product/UserGetAllID`
             );
             setProducts(products.data);
 
@@ -71,34 +72,12 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                
+
                 <div id="preloader"></div>
                 <div className='col-12 d-flex justify-content-center'>
                     <div class="row row-cols-2 px-4">
                         {products?.map((product) =>
-                            <div key={product._id} className='p-4  p-sm-5 d-flex justify-content-center'>
-                                <div className="card mb-2" style={{ maxWidth: 540 }}>
-                                    <div className="row g-0 ">
-                                        <div className="col-md-4 btn-pp align-items-center d-flex">
-                                            <div class="d-flex ">
-                                                <img src={product.productImageBase64} className="img-fluid rounded-start" alt="..." />
-                                            </div>
-                                        </div>
-                                        <div className="col-md-8 ">
-                                            <div className="card-body bg-cream">
-                                                <h5 className="card-title">{product.productName}</h5>
-                                                <p className="card-text text-truncate">{product.productDescription}</p>
-                                                <hr></hr>
-                                                <p className="card-text">You can get this product for free.</p>
-                                                <hr></hr>
-                                                <div className='d-flex justify-content-md-center'>
-                                                    <Link to={`/order/${product.productName}`} class="btn-or btn badge text-uppercase fs-6" type="submit">get free</Link>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <HomeProductBox key={product} product={product} />
                         )}
                     </div>
 

@@ -39,19 +39,24 @@ export default function Add_product({ product }) {
     }
     const onClick = async (e) => {
         e.preventDefault();
-        const stat = await axios.post('http://localhost:8000/product/addProduct', {
-            productName, productLocation, productQuantity, productDescription, productContacts, productImageBase64
-        }, {
-            headers: {
-                authorization: token
-            }
-        }).then(
-            alert("Add Product Successfully"),
-            window.location.reload()
-        ).catch(function (error) {
-            console.log(error.response.data)
-        })
-        console.log(stat)
+        if (productName && productLocation && productQuantity && productDescription && productContacts && productImageBase64) {
+            const stat = await axios.post('http://localhost:8000/product/addProduct', {
+                productName, productLocation, productQuantity, productDescription, productContacts, productImageBase64
+            }, {
+                headers: {
+                    authorization: token
+                }
+            }).then(
+                alert("Add Product Successfully"),
+                window.location.reload()
+            ).catch(function (error) {
+                console.log(error.response.data)
+            })
+            console.log(stat)
+        } else {
+            alert('required all input')
+        }
+
     }
 
     console.log(productName, productLocation, productQuantity, productDescription, productContacts, productImageBase64);

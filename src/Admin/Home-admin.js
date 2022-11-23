@@ -15,7 +15,7 @@ export default function Home_product() {
     useEffect(() => {
         async function getProducts() {
             const products = await axios.get(
-                `http://localhost:8000/product/adminGetAll`
+                `http://localhost:8000/product/AdminGetAllID`
             );
             setProducts(products.data);
 
@@ -54,7 +54,7 @@ export default function Home_product() {
                     </div>
 
                     {products?.map((product) =>
-                        <AdminProductBox key={product._id} product={product} token={token} />
+                        <AdminProductBox key={product} product={product} token={token} />
                     )}
                 </div>
             </div>

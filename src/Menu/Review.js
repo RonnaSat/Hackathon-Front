@@ -169,7 +169,7 @@ export default function Review_product() {
             </>
         );
     } else if (receipt?.orderStatus === "0") {
-        alert('Have not confirmed the product yet')
+
         window.location.href = "/order"
     }
     else if (receiptStat === "No Order" || receiptStat === "Order failed") {
