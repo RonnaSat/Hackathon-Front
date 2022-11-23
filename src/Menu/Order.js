@@ -31,7 +31,7 @@ export default function Order() {
         window.location.href = "/login";
     } else {
         if (receipt?.orderStatus === "1") {
-            alert("You have to review a tester");
+            // alert("You have to review a tester");
             window.location.href = '/review';
         } else if (receipt) {
             return (

@@ -45,7 +45,7 @@ export default function AdminProductBox({ product, token }) {
                                         <p className="card-text">{product.productLocation}</p>
                                         <hr></hr>
                                         <h5 className="card-title fw-bold pb-2">Quantity</h5>
-                                        <p className="card-text"></p>
+                                        <p className="card-text">{product.productQuantity}</p>
                                     </div>
                                     <div class="col justify-content-center align-items-center mt-3 ">
 

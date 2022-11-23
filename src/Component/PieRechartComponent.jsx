@@ -47,7 +47,7 @@ class PieRechartComponent extends React.Component {
       console.log(this.props.reviewData.filter(a => a === 5).length)
       return (
 
-         <PieChart width={400} height={300}>
+         <PieChart width={520} height={300}>
             <Pie
                data={this.pieData}
                color="#000000"

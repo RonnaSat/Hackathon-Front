@@ -47,7 +47,7 @@ function App() {
       <Route path="/review_admin/:productName" element={<Review_admin />} />
       <Route path="*" element={<Error />} />
 
-      <Route path="/review_admin" element={<Review_admin />} />
+      {/* <Route path="/review_admin" element={<Review_admin />} /> */}
     </Routes>
   );
 }
